@@ -2,7 +2,7 @@
 title: Moving to Jekyll
 layout: post
 quote:
-  text: "You have your work and nothing more."
+  text: &quot;You have your work and nothing more.&quot;
   attr: Jekyll & Hyde, a Real Gothic Musical
 ---
 
