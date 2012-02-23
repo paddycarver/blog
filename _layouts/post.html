@@ -1,6 +1,12 @@
 <html>
         <head>
                 <title>{{ page.title }}</title>
+                <meta property="og:title" content="paddy.io: {{ page.title }}" />
+                <meta property="og:type" content="blog" />
+                <meta property="og:url" content="http://paddy.io{{ site.baseurl }}{{ page.permalink }}" />
+                <meta property="og:image" content="http://paddy.io{{ site.baseurl }}/paddy.jpg" />
+                <meta property="og:site_name" content="paddy.io" />
+                <meta property="fb:admins" content="1274456118" />                
                 <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/reset.css" />
                 <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400|Balthazar:400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>                
                 <style type="text/css">
@@ -48,7 +54,7 @@
                         a:visited {
                                 text-decoration: none;
                         }
-                        div#bio {
+                        div#bio, div#share {
                                 text-align: center;
                         }
                         nav li {
@@ -85,6 +91,14 @@
                         }
                 </style>
         </head>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=355418237825847";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
         <body>
                 <section>
                         <article>
@@ -114,6 +128,10 @@
                                                 <li><a href="http://profiles.google.com/foran.paddy" title="Google+">google+</a></li>
                                         </ul>
                                 </nav>
+                                <div id="share">
+                                        <h3>Sharing is Caring</h3>
+                                        <div class="fb-like" data-href="http://paddy.io{{ site.baseurl }}{{ page.permalink }}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+                                </div>
                         </aside>
                 </section>
         </body>
