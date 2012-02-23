@@ -7,7 +7,7 @@
                 
                 {{ content }}
 
-                <p>Tags: {{ page.tags }}</p>
-                <p>Categories: {{ page.categories }}</p>
+                <p>Tags: {{ page.tags.join:", " }}</p>
+                <p>Categories: {{ page.categories.join:", " }}</p>
         </body>
 </html>
