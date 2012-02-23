@@ -3,10 +3,10 @@
                 <title>{{ page.title }}</title>
                 <meta property="og:title" content="paddy.io: {{ page.title }}" />
                 <meta property="og:type" content="blog" />
-                <meta property="og:url" content="http://{{ site.domain }}{{ site.baseurl }}{{ page.permalink }}" />
+                <meta property="og:url" content="http://{{ site.domain }}{{ site.baseurl }}{{ page.url }}" />
                 <meta property="og:image" content="http://{{ site.domain }}{{ site.baseurl }}/img/paddy.jpg" />
                 <meta property="og:site_name" content="paddy.io" />
-                <meta property="og:description" content="{% if page.summary %}{{ page.summary }}{% else %}The personal site of Paddy Foran.{% endif %}" />
+                <meta property="og:description" content="{% if page.summary %}{{ page.summary }}{% else %}{{ content | strip_html | truncatewords:30 }}{% endif %}" />
                 <meta property="fb:admins" content="1274456118" />                
                 <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/reset.css" />
                 <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400|Balthazar:400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>                
@@ -131,7 +131,7 @@
                                 </nav>
                                 <div id="share">
                                         <h3>Sharing is Caring</h3>
-                                        <div class="fb-like" data-href="http://{{ site.domain }}{{ site.baseurl }}{{ page.permalink }}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+                                        <div class="fb-like" data-href="http://{{ site.domain }}{{ site.baseurl }}{{ page.permalink }}/" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
                                 </div>
                         </aside>
                 </section>
