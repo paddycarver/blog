@@ -1,8 +1,9 @@
 ---
 layout: post
 permalink: /bio
+title: Nice To Meet You
 quote:
-  text: "&quot;Remember that guy in that place who said that really obnoxious thing that probably offended you? That's me.&quot;"
+  text: Remember that guy in that place who said that really obnoxious thing that probably offended you? That's me.
 ---
 
 My name's Paddy Foran. I live in Buffalo, New York. I [write software]({{ site.baseurl }}/code "My Github Repository"), 
