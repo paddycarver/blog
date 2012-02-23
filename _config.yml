@@ -1,1 +1,2 @@
-permalink: /:title
+permalink: /posts/:title
+baseurl: /paddy-io
