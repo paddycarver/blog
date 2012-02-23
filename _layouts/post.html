@@ -93,7 +93,9 @@
                                 </header>
                                 {% if page.quote %}
                                 <blockquote>{{ page.quote.text }}</blockquote>
+                                {% if page.quote.attr %}
                                 <p class="attribution">-- {{ page.quote.attr }}</p>
+                                {% endif %}
                                 {% endif %}
                                 {{ content }}
                         </article>
