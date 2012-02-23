@@ -1,11 +1,11 @@
 <html>
         <head>
                 <title>{{ page.title }}</title>
-                <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+                <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/reset.css" />
                 <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400|Balthazar:400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>                
                 <style type="text/css">
                         body {
-                                background-image: url('../img/paper.png');
+                                background-image: url('{{ site.baseurl }}/img/paper.png');
                         }
                         article header h1 {
                                 color: #0E7F09;
@@ -94,14 +94,14 @@
                         </article>
                         <aside>
                                 <div id="bio">
-                                        <img src="../img/paddy.jpg" alt="Paddy Foran" /><br />
+                                        <img src="{{ site.baseurl }}/img/paddy.jpg" alt="Paddy Foran" /><br />
                                         <h3>Paddy Foran</h3>
                                 </div>
                                 <nav>
                                         <ul>
-                                                <li><a href="../bio" title="Bio">bio</a></li>
-                                                <li><a href="../posts" title="Posts">posts</a></li>                                                
-                                                <li><a href="../talks" title="Talks">talks</a></li>
+                                                <li><a href="{{ site.baseurl }}/bio" title="Bio">bio</a></li>
+                                                <li><a href="{{ site.baseurl }}/posts" title="Posts">posts</a></li>                                                
+                                                <li><a href="{{ site.baseurl }}/talks" title="Talks">talks</a></li>
                                                 <li><a href="https://www.github.com/paddyforan" title="Code">code</a></li>
                                                 <li><a href="http://www.twitter.com/paddyforan" title="Twitter">twitter</a></li>
                                                 <li><a href="http://profiles.google.com/foran.paddy" title="Google+">google+</a></li>
