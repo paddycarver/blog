@@ -1,0 +1,15 @@
+---
+layout: post
+permalink: /bio
+quote:
+  text: "&quot;Remember that guy in that place who said that really obnoxious thing that probably offended you? That's me.&quot;"
+---
+
+My name's Paddy Foran. I live in Buffalo, New York. I [write software]({{ site.baseurl }}/code "My Github Repository"), 
+give [talks]({{ site.baseurl }}/talks "My presentations"), and work for [Iron.io](http://www.iron.io "Iron.io"), 
+where we're working hard to build the cloud so you don't have to. (Don't think poorly of them just because of 
+little old me, though&mdash;they're wonderful people who were just silly enough to hire me. My opinions and crude language 
+are my own, void where prohibited by law, et cetera, et cetera.)
+
+I don't know much about you, but I'm willing to bet I've offended you in some way, shape, or form already. And if I haven't, 
+well, I probably will soon. I don't mind all that much, and I hope you don't, either.
