@@ -1,6 +1,7 @@
 ---
 title: Ass Kicked Per Minute
 layout: post
+has_tweet: true
 ---
 
 When I was hired by [Iron.io](http://www.iron.io), they hired me as a 
@@ -67,5 +68,3 @@ myself and explain what I do, I have every intention of being honest:
 
 <blockquote>"I spend a whole lot of time trying to save you a few seconds. 
 And it is the best possible use of my time."</blockquote>
-
-<script src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>

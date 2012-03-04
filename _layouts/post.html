@@ -147,5 +147,6 @@
                     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
                   })();
                 </script>
+                {% if page.has_tweet %}<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>{% endif %}
         </body>
 </html>
