@@ -1,5 +1,5 @@
 ---
-title: Kick More Ass Per Minute
+title: Ass Kicked Per Minute
 layout: post
 ---
 
@@ -29,6 +29,9 @@ Matt Cutts, of Google's spam-fighting team, said that being able to code
 is akin to having a superpower in today's society. And he's right. It is 
 becoming increasingly obvious that developers are a desired asset in 
 pretty much every corner of our society today.
+
+<blockquote class="twitter-tweet tw-align-center"><p>The ability to write code is pretty much a super power in today's society.</p>&mdash; Matt Cutts (@mattcutts) <a href="https://twitter.com/mattcutts/status/172448195723530240" data-datetime="2012-02-22T22:30:28+00:00">February 22, 2012</a></blockquote>
+<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 But every Batman needs an Alfred, and every developer needs a developer 
 advocate. Alfred doesn't give Batman new powers or enhance his powers in 
