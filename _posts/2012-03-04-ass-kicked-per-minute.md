@@ -24,7 +24,8 @@ experience.
 
 There's not a lot there. The most useful resource I can point you to is 
 [Pamela Fox](http://www.pamelafox.org)'s [Developer Support Handbook](http://developer-support-handbook.org), 
-which she documented her experience at Google in.
+in which she documented her experience at Google as a developer support 
+pioneer.
 
 Matt Cutts, of Google's spam-fighting team, said that being able to code 
 is akin to having a superpower in today's society. And he's right. It is 
@@ -36,7 +37,7 @@ pretty much every corner of our society today.
 But every Batman needs an Alfred, and every developer needs a developer 
 advocate. Alfred doesn't give Batman new powers or enhance his powers in 
 any way; rather, Alfred's purpose is to give Batman more time to use his 
-powers, by removing unecessary and mundance time-sinks that Batman would 
+powers, by removing unecessary and mundane time-sinks that Batman would 
 have had to deal with.
 
 When I realised this, I started measuring the work we were doing at Iron 
