@@ -31,7 +31,6 @@ becoming increasingly obvious that developers are a desired asset in
 pretty much every corner of our society today.
 
 <blockquote class="twitter-tweet tw-align-center"><p>The ability to write code is pretty much a super power in today's society.</p>&mdash; Matt Cutts (@mattcutts) <a href="https://twitter.com/mattcutts/status/172448195723530240" data-datetime="2012-02-22T22:30:28+00:00">February 22, 2012</a></blockquote>
-<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 But every Batman needs an Alfred, and every developer needs a developer 
 advocate. Alfred doesn't give Batman new powers or enhance his powers in 
@@ -68,3 +67,5 @@ myself and explain what I do, I have every intention of being honest:
 
 <blockquote>"I spend a whole lot of time trying to save you a few seconds. 
 And it is the best possible use of my time."</blockquote>
+
+<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
