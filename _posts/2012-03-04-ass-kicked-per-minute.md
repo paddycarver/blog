@@ -51,7 +51,7 @@ At first, we could gain huge improvements in our Ass Kicked Per Minute
 scores. Things like refactoring our navigation to be more intuitive. We 
 had a golden rule: if I can't get where I want to be in two clicks, it's 
 wrong. We rewrote a lot of our documentation from scratch, focusing on 
-completeness and accuracy. While we do have a public support chatroom, 
+completeness and accuracy. While we do have a [public support chatroom](http://www.hipchat.com/gNWgTiqIC), 
 I regard every developer that winds up there as a developer I've failed. 
 My next goal is to declare war on scrolling; scrolling is an imprecise, 
 wasteful navigational technique, and the less users have to do it, the 
@@ -62,8 +62,8 @@ we can only shave a half of a second off a common task. It's absolutely
 still worth doing, because that's a half a second that criminals are 
 taking purses from little old ladies, otherwise.
 
-I get to stand in front of a room full of amazing college students in 
-a couple weeks and talk to them about our products. And when I introduce 
+I get to stand in front of a room full of [amazing college students](http://www.ubhacking.com) 
+in a couple weeks and talk to them about our products. And when I introduce 
 myself and explain what I do, I have every intention of being honest: 
 
 <blockquote>"I spend a whole lot of time trying to save you a few seconds. 
