@@ -1,0 +1,11 @@
+application: assperminute
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+  - url: /
+    static_dir: upload
+  - url: /
+    static_files: upload/index.html
+    upload: upload/index.html
