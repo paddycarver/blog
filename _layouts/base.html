@@ -13,6 +13,7 @@
                 <meta property="fb:admins" content="1274456118" />
                 <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/reset.css" />
                 <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400|Balthazar:400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+                <link rel="alternate" type="application/rss+xml" title="paddy.io: {% if page.categories contains "talks" %}talks{% else %}posts{% endif %}" href="http://{{ site.domain }}{{ site.baseurl }}/{% if page.categories contains "talks" %}talks{% else %}posts{% endif %}/feed.xml" />
                 <style type="text/css">
                         body {
                                 background-image: url('{{ site.baseurl }}/img/paper.png');
