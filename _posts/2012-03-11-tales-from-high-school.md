@@ -61,7 +61,7 @@ target ducked just in time, letting the yardstick clatter off the column.
 The fight raged on for minutes. At one point, a collective gasp arose 
 from one side of the square. The group of students parted, and a student 
 wearing a black hoodie approached. The hood was raised, riding low on his 
-brow, obscuring his face. In each hand, he held a yardstick, its tips 
+brow, obscuring his face. He held a yarstick in each hand, their tips 
 trailing on the floor as he walked. The combatant Jedis, locked in a 
 battle of strength at the center of the square, broke their fight and 
 stared at the intruder. The Sith slowly raised both yardsticks, and the 
