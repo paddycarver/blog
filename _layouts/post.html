@@ -1,110 +1,7 @@
-<html>
-        <head>
-                <title>{{ page.title }}</title>
-                <meta property="og:title" content="paddy.io: {{ page.title }}" />
-                <meta itemprop="name" content="paddy.io: {{ page.title }}">
-                <meta property="og:type" content="blog" />
-                <meta property="og:url" content="http://{{ site.domain }}{{ site.baseurl }}{{ page.url }}/" />
-                <meta property="og:image" content="http://{{ site.domain }}{{ site.baseurl }}/img/paddy.jpg" />
-                <meta itemprop="image" content="http://{{ site.domain }}{{ site.baseurl }}/img/paddy.jpg">
-                <meta property="og:site_name" content="paddy.io" />
-                <meta property="og:description" content="{% if page.summary %}{{ page.summary }}{% else %}{{ content | strip_html | truncatewords:30 }}{% endif %}" />
-                <meta itemprop="description" content="{% if page.summary %}{{ page.summary }}{% else %}{{ content | strip_html | truncatewords:30 }}{% endif %}">
-                <meta property="fb:admins" content="1274456118" />                
-                <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/reset.css" />
-                <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400|Balthazar:400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>                
-                <style type="text/css">
-                        body {
-                                background-image: url('{{ site.baseurl }}/img/paper.png');
-                        }
-                        article header h1 {
-                                color: #0E7F09;
-                                font-size: 2.75em;
-                                font-family: 'Gentium Book Basic', serif;
-                        }
-                        aside {
-                                font-family: 'Balthazar', serif;
-                                width: 21%;
-                                position: fixed;
-                                top: 2em;
-                                margin-left: 79%;
-                        }
-                        article {
-                                margin-left: 15%;
-                                padding: 2%;
-                                width: 60%;
-                                font-family: 'Balthazar', serif;
-                                font-size: 1.1em;
-                                background-color: #F9F9F9;
-                                -webkit-box-shadow: 4px 4px 5px #888, -4px 4px 5px #888;
-                                   -moz-box-shadow: 4px 4px 5px #888, -4px 4px 5px #888;
-                                        box-shadow: 4px 4px 5px #888, -4px 4px 5px #888;
-                        }
-                        article header {
-                                border-bottom: 1px solid #0E7F09;
-                        }
-                        nav {
-                                margin: 0px auto;
-                                text-align: center;
-                        }
-                        a {
-                                color: #0E7F09;
-                                text-decoration: underline;
-                        }
-                        a:visited, a:hover {
-                                color: #3A7F37;
-                                text-decoration: none;
-                        }
-                        a:visited {
-                                text-decoration: none;
-                        }
-                        div#bio, div#share {
-                                text-align: center;
-                        }
-                        nav li {
-                                padding: .25em 0;
-                        }
-                        aside h3 {
-                                margin: .25em 0;
-                                font-size: 1.5em;
-                        }
-                        article p {
-                                margin: .75em 0;
-                                line-height: 1.25em;
-                                text-indent: 2.5em;
-                        }
-                        blockquote {
-                                width: 95%;
-                                text-align: center;
-                                padding: .5em .5em 0em .5em;
-                                font-size: 1.5em;
-                                color: #667F59;
-                        }
-                        p.attribution {
-                                width: 55%;
-                                margin: 0px;
-                                margin-left: 45%;
-                                padding: 0em .5em .5em .5em;
-                                font-style: italic;
-                        }
-                        em {
-                                font-style: italic;
-                        }
-                        strong {
-                                font-weight: bold;
-                        }
-                </style>
-        </head>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=355418237825847";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-        <body>
-                <section>
+---
+layout: base
+---
+
                         <article>
                                 <header>
                                         <h1>{{ page.title}}</h1>
@@ -118,35 +15,10 @@
                                 {{ content }}
                         </article>
                         <aside>
-                                <div id="bio">
-                                        <img src="{{ site.baseurl }}/img/paddy.jpg" alt="Paddy Foran" /><br />
-                                        <h3>Paddy Foran</h3>
-                                </div>
-                                <nav>
-                                        <ul>
-                                                <li><a href="{{ site.baseurl }}/bio/" title="Bio">bio</a></li>
-                                                <li><a href="{{ site.baseurl }}/posts" title="Posts">posts</a></li>                                                
-                                                <li><a href="{{ site.baseurl }}/talks" title="Talks">talks</a></li>
-                                                <li><a href="https://www.github.com/paddyforan" title="Code">code</a></li>
-                                                <li><a href="http://www.twitter.com/paddyforan" title="Twitter">twitter</a></li>
-                                                <li><a href="http://profiles.google.com/foran.paddy" title="Google+">google+</a></li>
-                                        </ul>
-                                </nav>
+                                {% include menu.html %}
                                 <div id="share">
                                         <h3>Sharing is Caring</h3>
                                         <div style="padding: .5em 2.5em .5em 0; float: right;"><div class="g-plusone" data-size="tall" data-href="http://{{ site.domain }}{{ site.baseurl }}{{ page.url }}"></div></div> <div class="fb-like" style="float: left; height: 63px; padding: .5em 0em .5em 2.5em;" data-href="http://{{ site.domain }}{{ site.baseurl }}{{ page.url }}" data-send="false" data-layout="box_count" data-width="90" data-show-faces="false"></div><br style="clear: both;" />
                                         <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://{{ site.domain }}{{ site.baseurl }}{{ page.url }}" data-text="{{ page.title }}" data-via="paddyforan" data-related="paddyforan" data-size="large">Tweet</a><br />
                                 </div>
                         </aside>
-                </section>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                <script type="text/javascript">
-                  (function() {
-                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-                    po.src = 'https://apis.google.com/js/plusone.js';
-                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-                  })();
-                </script>
-                {% if page.has_tweet %}<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>{% endif %}
-        </body>
-</html>

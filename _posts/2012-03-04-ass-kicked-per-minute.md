@@ -2,6 +2,9 @@
 title: Ass Kicked Per Minute
 layout: post
 has_tweet: true
+categories:
+  - posts
+summary: "Coders are Batman, <a href='http://www.iron.io' title='Iron.io'>Iron.io</a> is Alfred, and building your infrastructure is a pain in the ass. Also, work should be measured in how long it takes to kick ass."
 ---
 
 When I was hired by [Iron.io](http://www.iron.io), they hired me as a 

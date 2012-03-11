@@ -2,9 +2,12 @@
 title: Tales From High School
 layout: post
 has_tweet: false
+categories:
+  - posts
 quote:
   text: "True terror is to wake up one morning and discover that your high school class is running the country."
   attr: "Kurt Vonnegut"
+summary: "A long and unnecessarily epic story that serves no real purpose. I just wanted to tell it. Also, it has Jedis."
 ---
 
 Today's post has no point. There is no lesson here. It will not make 

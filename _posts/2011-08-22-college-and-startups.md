@@ -1,6 +1,9 @@
 ---
 title: College & Startups
 layout: post
+categories:
+  - posts
+summary: "College students and startup founders lead very similar lives and have oddly similar goals. Our youth, fresh out of high school, are being encouraged to pursue one of these lifestyles, however, and I have to wonder whether it is the right one."
 ---
 
 *Disclaimer: I tend to write posts for this blog, maybe sleep on them (at most), then publish them. Very rarely do I edit or ask for feedback. However, this is a topic that I feel strongly about and wanted to speak intelligently on, so I asked for feedback during its drafting process. [Ahmed Al-Sudani](http://www.twitter.com/ahmedalsudani "Ahmed Al-Sudani on Twitter"), [Kevin Purdy](http://www.thepurdman.com "Kevin Purdy"), [Matt Turland](http://www.matthewturland.com "Matthew Turland"), [Ryan MacGillivray](https://github.com/RyanMacG "Ryan MacGillivray on Github"), and [Tino Galizio](http://www.twitter.com/tinogalizio "Tino Galizio on Twitter") were all instrumental in getting this post written. I owe them a debt of gratitude for working with me through multiple drafts to come up with the post you're reading now. It's still not perfect, and never will be, but they gave me a safe environment to learn from my initial failures.*

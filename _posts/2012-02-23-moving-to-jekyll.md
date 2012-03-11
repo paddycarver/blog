@@ -1,9 +1,12 @@
 ---
 title: Moving to Jekyll
 layout: post
+categories:
+  - posts
 quote:
   text: "&quot;You have your work and nothing more.&quot;"
-  attr: Jekyll & Hyde, the Musical
+  attr: Jekyll &amp; Hyde, the Musical
+summary: "Someone you probably know or care little about is using a new mass of ones and zeroes to inflict his opinions on the world."
 ---
 
 I'm considering moving my personal site over to [Github pages](http://pages.github.com) to be powered by [Jekyll](http://github.com/mojombo/jekyll/). I like the capability to write my posts in [Markdown](http://daringfireball.net/projects/markdown) and the free, reliable hosting that Github provides. I like the flexibility of the templating engine. Most of the restrictions and limitations of Jekyll are things that I won't miss, anyways.
