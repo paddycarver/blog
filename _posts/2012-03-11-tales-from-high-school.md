@@ -5,7 +5,7 @@ has_tweet: false
 categories:
   - posts
 quote:
-  text: "True terror is to wake up one morning and discover that your high school class is running the country."
+  text: "&quot;True terror is to wake up one morning and discover that your high school class is running the country.&quot;"
   attr: "Kurt Vonnegut"
 summary: "A long and unnecessarily epic story that serves no real purpose. I just wanted to tell it. Also, it has Jedis."
 ---
