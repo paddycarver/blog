@@ -3703,6 +3703,10 @@ body {
   font-size: 19.5px;
   line-height: 27px;
 }
+.welcome p {
+  font-size: 16.25px;
+  line-height: 22.5px;
+}
 .pricing > h2 {
   font-size: 26px;
   line-height: 26px;
