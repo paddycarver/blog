@@ -3052,6 +3052,9 @@ input[type="submit"].btn.btn-mini {
   text-decoration: none;
   text-shadow: 0px 0px 4px #ffffff;
 }
+.navbar .nav > li > a > i {
+  text-shadow: none;
+}
 .navbar .nav .active > a,
 .navbar .nav .active > a:hover {
   color: #ffffff;
@@ -3204,6 +3207,14 @@ input[type="submit"].btn.btn-mini {
 }
 .pagination-right {
   text-align: right;
+}
+.brand {
+  min-height: 20px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: 20px 40%;
+  padding-left: 60px!important;
+  background-image: url("../img/icon-white-cloud.png");
 }
 .modal-open .dropdown-menu {
   z-index: 2050;

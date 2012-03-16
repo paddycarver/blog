@@ -25,17 +25,38 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <a class="btn btn-navbar" tabIndex="-1" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Project name</a>
+          <a tabIndex="-1" class="brand" href="#">2cloud</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li class="active"><a tabIndex="-1" href="#"><i class="icon-large icon-home"></i>Home</a></li>
+              <li><a tabIndex="-1" href="#about"><i class="icon-large icon-info-sign"></i>About</a></li>
+              <li class="dropdown" id="contact">
+                <a tabIndex="-1" href="#contact" data-toggle="dropdown"><i class="icon-large icon-comments"></i>Contact <i class="icon-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                  <li><a tabIndex="-1" href="http://links.2cloud.org/twitter" target="_blank"><i class="icon-large icon-twitter-sign"></i>Twitter</a></li>
+                  <li><a tabIndex="-1" href="http://links.2cloud.org/facebook" target="_blank"><i class="icon-large icon-facebook-sign"></i>Facebook</a></li>
+                  <li><a tabIndex="-1" href="http://links.2cloud.org/google+" target="_blank"><i class="icon-large icon-plus"></i>Google+</a></li>
+                  <li class="divider"></li>
+                  <li><a tabIndex="-1" href="email"><i class="icon-large icon-envelope"></i>Email</a></li>
+                </ul>
+              </li>
+              <li><a tabIndex="-1" href="http://help.2cloud.org" target="_blank"><i class="icon-large icon-question-sign"></i>Support</a></li>
+            </ul>
+            <ul class="nav pull-right">
+              <li class="dropdown" id="user">
+                      <a tabIndex="-1" href="#user" data-toggle="dropdown"><i class="icon-large icon-user"></i>Paddy Foran <i class="icon-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                  <li><a tabIndex="-1" href="settings"><i class="icon-large icon-cogs"></i>Settings</a></li>
+                  <li><a tabIndex="-1" href="billing"><i class="icon-large icon-shopping-cart"></i>Payment Info</a></li>
+                  <li class="divider"></li>
+                  <li><a tabIndex="-1" href="logout"><i class="icon-large icon-signout"></i>Sign Out</a></li>
+                </ul>
+              </li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

@@ -3046,17 +3046,20 @@ input[type="submit"].btn.btn-mini {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 .navbar .nav > li > a:hover {
-  background-image: url("../img/broken_noise.png");
+  background-image: url("../img/dark_leather.png");
   background-repeat: repeat;
   color: #ffffff;
   text-decoration: none;
   text-shadow: 0px 0px 4px #ffffff;
 }
+.navbar .nav > li > a > i {
+  text-shadow: none;
+}
 .navbar .nav .active > a,
 .navbar .nav .active > a:hover {
   color: #ffffff;
   text-decoration: none;
-  background-image: url("../img/broken_noise.png");
+  background-image: url("../img/dark_leather.png");
   background-repeat: repeat;
 }
 .navbar .divider-vertical {
@@ -3204,6 +3207,14 @@ input[type="submit"].btn.btn-mini {
 }
 .pagination-right {
   text-align: right;
+}
+.brand {
+  min-height: 20px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: 20px 40%;
+  padding-left: 60px!important;
+  background-image: url("../img/icon-white-cloud.png");
 }
 .modal-open .dropdown-menu {
   z-index: 2050;
