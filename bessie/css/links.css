@@ -1228,7 +1228,7 @@ table {
   max-width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 .table {
   width: 100%;
@@ -1239,8 +1239,7 @@ table {
   padding: 8px;
   line-height: 18px;
   text-align: left;
-  vertical-align: top;
-  border-top: 1px solid #999999;
+  border-top: 1px solid #dddddd;
 }
 .table th {
   font-weight: bold;
@@ -1255,14 +1254,14 @@ table {
   border-top: 0;
 }
 .table tbody + tbody {
-  border-top: 2px solid #999999;
+  border-top: 2px solid #dddddd;
 }
 .table-condensed th,
 .table-condensed td {
   padding: 4px 5px;
 }
 .table-bordered {
-  border: 1px solid #999999;
+  border: 1px solid #dddddd;
   border-left: 0;
   border-collapse: separate;
   *border-collapse: collapsed;
@@ -1272,7 +1271,7 @@ table {
 }
 .table-bordered th,
 .table-bordered td {
-  border-left: 1px solid #999999;
+  border-left: 1px solid #dddddd;
 }
 .table-bordered thead:first-child tr:first-child th,
 .table-bordered tbody:first-child tr:first-child th,
@@ -1303,13 +1302,17 @@ table {
   -moz-border-radius: 0 0 4px 0;
   border-radius: 0 0 4px 0;
 }
-.table-striped tbody tr:nth-child(odd) td,
-.table-striped tbody tr:nth-child(odd) th {
-  background-color: #ffffff;
+.table-striped tbody tr:not(.no-stripe):nth-child(odd) td,
+.table-striped tbody tr:not(.no-stripe):nth-child(odd) th {
+  background-color: #edf0f3;
+}
+tr.striped td,
+tr.striped th {
+  background-color: #edf0f3;
 }
 .table tbody tr:hover td,
 .table tbody tr:hover th {
-  background-color: #d9edf7;
+  background-color: #f5f5f5;
 }
 table .span1 {
   float: none;
@@ -3265,7 +3268,6 @@ input[type="submit"].btn.btn-mini {
   font-weight: bold;
   line-height: 13px;
   color: #ffffff;
-  vertical-align: middle;
   white-space: nowrap;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #999999;
@@ -3487,10 +3489,10 @@ input[type="submit"].btn.btn-mini {
   background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .pull-right {
-  float: right;
+  float: right!important;
 }
 .pull-left {
-  float: left;
+  float: left!important;
 }
 .hide {
   display: none;
@@ -3537,6 +3539,9 @@ body {
 #send-link-inputs {
   margin-bottom: 20px;
 }
+.send-link-toggle {
+  cursor: pointer;
+}
 .send-link-toggle i {
   vertical-align: middle;
   margin: 5px;
@@ -3568,8 +3573,7 @@ body {
 }
 .links th {
   font-size: 14.3px;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #ffffff;
   font-weight: normal;
 }
 .intro {
@@ -3578,6 +3582,27 @@ body {
 }
 .intro p {
   font-size: 19.5px;
+}
+td.comment {
+  padding: 4px;
+  font-size: 11.700000000000001px;
+  line-height: 16.2px;
+  background-color: #EDF0F3;
+}
+td.comment > span.label {
+  line-height: 16.2px;
+}
+#links-per-page-slider > .ui-slider-handle {
+  border: 1px solid #005580;
+  background-color: #0290d2;
+  background-image: -moz-linear-gradient(top, #0088cc, #049cdb);
+  background-image: -ms-linear-gradient(top, #0088cc, #049cdb);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#049cdb));
+  background-image: -webkit-linear-gradient(top, #0088cc, #049cdb);
+  background-image: -o-linear-gradient(top, #0088cc, #049cdb);
+  background-image: linear-gradient(top, #0088cc, #049cdb);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#049cdb', GradientType=0);
 }
 /*!
  * Bootstrap Responsive v2.0.2
