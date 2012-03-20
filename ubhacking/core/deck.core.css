@@ -184,57 +184,34 @@ html {
 }
 
 .slide {
-  width: auto;
+  width: 70%;
   min-height: 100%;
   position: relative;
+  margin: 0px auto;
 }
 .slide h1 {
-  font-size: 4.5em;
-}
-.slide h1, .slide .vcenter {
+  font-size: 3em;
   font-weight: bold;
-  text-align: center;
-  padding-top: 1em;
-  max-height: 100%;
-}
-.csstransforms .slide h1, .csstransforms .slide .vcenter {
-  padding: 0 48px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-  -moz-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  -o-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-}
-.slide .vcenter h1 {
-  position: relative;
-  top: auto;
-  padding: 0;
-  -webkit-transform: none;
-  -moz-transform: none;
-  -ms-transform: none;
-  -o-transform: none;
-  transform: none;
+  color: #F6B26B;
 }
 .slide h2 {
-  font-size: 2.25em;
+  font-size: 2.75em;
   font-weight: bold;
   padding-top: .5em;
   margin: 0 0 .66666em 0;
-  border-bottom: 3px solid #888;
+  border-bottom: 3px solid #F6B26B;
+  color: #F6B26B;
 }
 .slide h3 {
-  font-size: 1.4375em;
+  font-size: 2.5em;
   font-weight: bold;
   margin-bottom: .30435em;
+  color: white;
 }
 .slide h4 {
-  font-size: 1.25em;
-  font-weight: bold;
+  font-size: 2em;
   margin-bottom: .25em;
+  color: white;
 }
 .slide h5 {
   font-size: 1.125em;
