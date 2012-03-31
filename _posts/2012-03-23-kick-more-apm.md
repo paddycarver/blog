@@ -46,10 +46,10 @@ So I made my slides in [deck.js](http://imakewebthings.github.com/deck.js), hook
 them up to [App Engine](http://appengine.google.com)'s [Channel API](http://code.google.com/appengine/docs/python/channel), 
 and integrated [Twilio](http://www.twilio.com)'s API so messages that were texted 
 to me could appear on the slides themselves during the presentation. I could then 
-integrate IronWorker and IronMQ to text the audience members back, during the 
+integrate IronWorker and IronMQ to text the audience members back during the 
 presentation. When I made the plot diagram for the slides (you know, the one they 
 taught you back in middle school: rising action, climax, falling action), I used 
-the response texts as the falling action. I implemented an artificial delay and 
+the response texts as the climax. I implemented an artificial delay and 
 made it possible to queue up more and more workers to process the queue of messages 
 to send, showing the parallel processing capabilities of the platform. In essence, 
 the room started with disparate beeps when one worker was running, then erupted into 
