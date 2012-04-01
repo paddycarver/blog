@@ -3146,6 +3146,12 @@ input[type="submit"].btn.btn-mini {
   left: auto;
   right: 13px;
 }
+.navbar.connected {
+  border-bottom: 3px solid #46A546;
+}
+.navbar.error {
+  border-bottom: 3px solid #ff2200;
+}
 .pagination {
   height: 36px;
   margin: 18px 0;
@@ -3712,7 +3718,8 @@ body {
   line-height: 26px;
   padding-bottom: 13px;
 }
-.pricing > .intro {
+.pricing > .intro,
+.share-container > .intro {
   font-size: 16.25px;
   line-height: 22.5px;
 }
