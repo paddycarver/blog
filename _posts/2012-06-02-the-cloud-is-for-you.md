@@ -50,7 +50,7 @@ debit card, and purchasing a year lease on the cheapest shared host I could
 find.
 
 This may sound absurd, but I can think of several companies off the top of 
-my head that run server architectures simiilar to this. Not a shared host, 
+my head that run server architectures similar to this. Not a shared host, 
 maybe not even just one server, but the database, the cache, and the 
 application are all on one machine.
 
