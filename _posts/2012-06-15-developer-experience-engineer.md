@@ -7,7 +7,6 @@ quote:
   text: "&quot;If you treat your developers well, then they will (for free) provide you with valuable insights about ways to improve your API, and they will evangelize your API for you.&quot;"
   attr: Pamela Fox, [The Developer Support Handbook](http://www.developer-support-handbook.org/intro.html)
 summary: "I've officially signed on as a Developer Experience Engineer at Iron.io. What the hell does that mean?"
-published: false
 ---
 
 Just over six months ago, I started working at [Iron.io](http://www.iron.io) 
