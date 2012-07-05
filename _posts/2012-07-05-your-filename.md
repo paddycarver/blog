@@ -1,6 +1,6 @@
 ---
 layout: default
-published: true
+published: false
 title: On Go
 quote:
   attr: "Andrew Gerrand"
