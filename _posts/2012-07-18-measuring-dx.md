@@ -53,3 +53,9 @@ But there are exceptions. If you have a generally good developer experience with
 Be honest, who *really* wants to explain to PayPal and Google Checkout all the reasons Stripe is preferred by developers? It's easier to just use Stripe. Even if you could come up with an actionable list, it doesn't feel like PayPal or Google would be nearly responsive enough in implementing those changes, so why bother? As important as asking what's wrong is, listening to the answer *and fixing it* is even more important, or developers will stop answering.
 
 It's also important to remember that this won't actually raise all the problems. Because you'll have developers that never start using your product or who see a dealbreaker and just move on with their lives. Developers are busy people right now. You can't count on them to find all the problems for you. But the developers who are invested in your platform or who are forced to use your platform will likely help you make their lives better.
+
+## What Else?
+
+This is what I've come up with. This is what I'm basing my efforts on right now. But there has to be more. There have to be ideas and tools and strategies besides this to measure platforms and products for pain points when specifically applied to developers.
+
+What am I missing? Tweet me at [@paddyforan](http://twitter.com/paddyforan) or hit me up on [Google+](http://profiles.google.com/foran.paddy) or, hell, email me at [foran.paddy@gmail.com](mailto:foran.paddy@gmail.com) and let's talk about it.
