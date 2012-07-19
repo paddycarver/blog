@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 categories: ['posts']
 title: "Measuring DX"
 quote:
