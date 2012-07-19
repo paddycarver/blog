@@ -1,11 +1,11 @@
 ---
 layout: post
-published: false
 title: "Measuring DX"
 quote:
   text: "&quot;If you don't know what you're testing, all the results in the world will tell you nothing.&quot;"
   attr: "Eric Ries, The Lean Startup"
 summary: "Developer Experience is all about working to make your platforms pleasant for developers to build on. But how do you measure your success at making people happy?"
+published: false
 ---
 [Developer experience](http://www.developerexperience.org) is a pretty new field. There aren't as many people working on it as there should be, and there isn't enough literature about it to learn it by reading. It's still something you need to just figure out as you go.
 
