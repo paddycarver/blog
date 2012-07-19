@@ -1,5 +1,7 @@
 ---
 layout: post
+published: false
+categories: ['posts']
 title: "Measuring DX"
 quote:
   text: "&quot;If you don't know what you're testing, all the results in the world will tell you nothing.&quot;"
