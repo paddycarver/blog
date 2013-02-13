@@ -1,5 +1,5 @@
 ---
-title: College & Startups
+title: College &amp; Startups
 layout: post
 categories:
   - posts
