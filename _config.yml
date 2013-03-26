@@ -2,3 +2,4 @@ permalink: /posts/:title
 baseurl: 
 domain: paddy.io
 description: "Remember that guy in that place that said that really obnoxious thing that probably offended you? This is his site."
+pygments: true
