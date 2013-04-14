@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: ['posts']
-title: In Defense Of The Hackathon
+title: In Defence Of The Hackathon
 summary: "I believe that hackathons are some of the most important events in our community, and I&apos;m afraid they&apos;re going the way of the dinosaur."
 quote:
   text: "&quot;You can create art and beauty on a computer. Samson&apos;s music program was an example. But to hackers, the art of the program did not reside in the pleasing sounds emanating from the online speaker. The code of the program held a beauty of its own.&quot;"
