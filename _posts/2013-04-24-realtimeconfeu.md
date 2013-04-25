@@ -8,7 +8,7 @@ published: true
 
 I&apos;ve spent an entire flight from Lyon, France to Istanbul, Turkey thinking about how to write this post, and I still have no idea how to approach it. So I&apos;m just going to do my best and hope it comes close to what I want it to be.
 
-I want to talk about [RealtimeConf Europe](http://www.realtimeconf.eu).
+I want to talk about [RealtimeConf Europe](http://realtimeconf.eu).
 
 I was fortunate enough to be invited as a speaker to the conference, to give a talk about how Go is a realtime language. I was incredibly flattered and incredibly intimidated to be selected as a speaker. A lot of these people&mdash;including Julien, the man behind the event, and Adam, who helped as an organiser&mdash;are people I respect and look up to (quite literally; Julien is freaking _tall_). It was incredibly intimidating to realise I would need to stand in front of them and pretend to be an expert. It was terrifying to realise I'd need to bring my best, and that my best might not be good enough.
 
