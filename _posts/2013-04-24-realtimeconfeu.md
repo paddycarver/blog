@@ -3,9 +3,6 @@ layout: post
 categories: ['posts']
 title: RealtimeConf Europe
 summary: "I spoke at RealtimeConf Europe in Lyon, France. This was a conference and an experience with no equal."
-quote:
-  text: "The competent programmer is fully aware of the limited size of his own skull. He therefore approaches his task with full humility, and avoids clever tricks like the plague."
-  attr: "Edsgar W. Dijkstra"
 published: true
 ---
 
