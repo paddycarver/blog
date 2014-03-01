@@ -20,7 +20,7 @@ Your client should be part of the pitch because I don&rsquo;t work with technolo
 
 ### Know Something About Me
 
-I [speak](/talks) frequently. I [tweet](https://twitter.com/paddyforan) constantly. I [blog](/posts) occasionally. I dominate the first few pages of Google search results for my name. I&rsquo;m not saying you need to know everything about me, but c&rsquo;mon, at least know when your job is obviously not a good fit. If you try to pitch me a Ruby job, there&rsquo;s a 100% chance I'm hitting the &ldquo;Mark As Spam&rdquo; button before I even finish reading your pitch, because you obviously did absolutely no research. If you try to pitch me a job in North Carolina, Kansas, or any other state that is currently hostile to LGBT people, I&rsquo;m going to reply with &ldquo;my boyfriend and I are not welcome there&rdquo; and links to relevant news articles. C&rsquo;mon.
+I [speak](/talks) frequently. I [tweet](https://twitter.com/paddyforan) constantly. I [blog](/posts) occasionally. I dominate the first few pages of Google search results for my name. I&rsquo;m not saying you need to know everything about me, but c&rsquo;mon, at least know when your job is obviously not a good fit. If you try to pitch me a Ruby job, there&rsquo;s a 100% chance I'm hitting the &ldquo;Mark As Spam&rdquo; button before I even finish reading your pitch, because you obviously did absolutely no research. If you try to pitch me a job that has a degree as a minimum requirement, I&rsquo;m going to snarkily ask if you&rsquo;re going to give me the degree, too. C&rsquo;mon.
 
 Yes, it takes time to do research, but it&rsquo;s a competitive market, and I am not being paid to respond to recruiters. You are being paid to contact me. Clearly, one of us should have the responsibility for determining if this is a good fit, and it&rsquo;s probably not me.
 
@@ -46,7 +46,7 @@ If you pitch me a job, even a job I want, when I have just started at another co
 
 Your job is not to get me invested in the opportunity. That is the company&rsquo;s job, by creating an exciting opportunity. Your job is to find good matches for that opportunity and to make the process from discovery to hiring easier. Your job is actually really cool; you get to help people find their dream jobs. And there&rsquo;s no reason for anyone to dread an email from you if you do your job properly, because you should be contacting people when you think you&rsquo;ve found a really exciting opportunity that they&rsquo;d love to take advantage of. And who doesn&rsquo;t love hearing &rdquo;Hey look at this really cool adventure! Do you want to take part?&rdquo;
 
-Most engineers hate recruiter pitches not because we hate being pitched, it&rsquo;s because we hate dealing with recruiters.
+Most engineers hate recruiter pitches not because we hate being pitched, it&rsquo;s because we hate dealing with recruiters that treat us like email addresses that had the misfortune of ending up in Mail Merge, not like people.
 
 I hope this guide was helpful and informative. I hope you&rsquo;ll send me amazing, appropriate opportunities that will benefit me and your clients. If you do your job well, I&rsquo;ll remember you. I&rsquo;ll forward you any friends I have looking for jobs, because I know you&rsquo;ll take care of them.
 
