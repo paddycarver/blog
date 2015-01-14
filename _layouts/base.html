@@ -31,8 +31,10 @@
       </div>
 
       <ul class="main-navigation">
+        <li class="extendednav"><a href="{{ site.baseurl }}/">Home</a></li>
         <li><a href="{{ site.baseurl }}/posts/">Posts</a></li>
         <li><a href="{{ site.baseurl }}/talks/">Talks</a></li>
+        <li class="extendednav"><a href="http://{{ site.domain }}{{ site.baseurl }}/{% if page.categories contains "talks" %}talks{% else %}posts{% endif %}/feed.xml" title="Subscribe" class="subscribe-link">Subscribe</a></li>
       </ul>
       </header><!-- #masthead -->
 
@@ -51,15 +53,17 @@
 
       <footer id="colophon" class="site-footer" role="contentinfo">
       <div class="site-info">
-        <p>Like what you see? <a href="http://{{ site.domain }}{{ site.baseurl }}/{% if page.categories contains "talks" %}talks{% else %}posts{% endif %}/feed.xml" title="Subscribe" id="subscribe-link">Subscribe</a> to get more or <a href="https://twitter.com/paddyforan" title="Paddy's Twitter profile">follow Paddy on Twitter</a>.</p>
+        <p>Like what you see? <a href="http://{{ site.domain }}{{ site.baseurl }}/{% if page.categories contains "talks" %}talks{% else %}posts{% endif %}/feed.xml" title="Subscribe" class="subscribe-link">Subscribe</a> to get more or <a href="https://twitter.com/paddyforan" title="Paddy's Twitter profile">follow Paddy on Twitter</a>.</p>
       </div>
       </footer>
     </div>
     {% if page.has_tweet %}<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>{% endif %}
     <script type="text/javascript">
-      var subscribeLink = document.getElementById("subscribe-link");
+      var subscribeLink = document.getElementsByClassName("subscribe-link");
       if(subscribeLink) {
-        subscribeLink.onclick=function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z); return false};
+        for (var i = 0; i < subscribeLink.length; i++) {
+          subscribeLink[i].onclick=function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z); return false};
+        }
       }
       var _gauges = _gauges || [];
       (function() {

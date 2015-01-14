@@ -335,6 +335,12 @@ Header
 	margin: 0;
 }
 
+@media (max-width: 800px) {
+	.main-navigation li.extendednav {
+		display: none;
+	}
+}
+
 .main-navigation a {
 	display: block;
 	padding: 0 15px;
