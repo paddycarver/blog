@@ -7,6 +7,7 @@ quote:
   text: "&ldquo;I&rsquo;m convinced that we can shape a different future for this country as it relates to mental health and as it relates to suicide.&rdquo;"
   attr: "David Satcher"
 published: true
+has_tweet: true
 ---
 
 Almost a year ago, [we lost Aaron](/posts/aaron). Yeah, I&rsquo;m still going on about that. That hurt. A lot.

@@ -4,6 +4,11 @@ categories: ['posts']
 title: Washington
 summary: We&rsquo;re looking at moving to the fine state of Washington, and people keep asking, so I thought I&rsquo;d talk about it.
 published: true
+img:
+  file: washington.jpg
+  title: Mount Rainier
+  attr: Anupam_ts
+  link: https://flic.kr/p/fAvjL1
 ---
 
 Every few years, it seems, I&rsquo;ve taken to moving. In 2008, I moved from Syracuse to Buffalo. In 2012, I started trying to move to San Francisco, and wound up back in Syracuse (long story). Then in 2013, I wound up in Buffalo again. Just before 2014 started, I switched over to Brooklyn to work for [DramaFever](https://www.dramafever.com). And now here it is, the start of 2015, and I&rsquo;m making plans to take [my fianc&eacute;](https://twitter.com/carver_ethan) and our [puppy](https://twitter.com/RoxyThePuppy) and head out to Washington when our lease ends in December, 2015. Yes, as in Washington State, across the country. No, not Washington D.C.

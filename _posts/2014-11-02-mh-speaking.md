@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: ['posts']
-title: Speaking of Mental Health&hellip;
+title: Speaking of Mental Health&#8230;
 summary: I will come talk to your organization, conference, or user group about mental health in tech.
 published: true
 quote:
