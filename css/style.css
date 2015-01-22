@@ -458,6 +458,11 @@ Content
 	font-size: 24px;
 }
 
+.site-main h3 {
+	font-weight: 400;
+	font-size: 20px;
+}
+
 blockquote.opener {
 	margin-bottom: 0px;
 }

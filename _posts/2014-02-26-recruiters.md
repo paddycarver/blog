@@ -10,7 +10,7 @@ Dear Recruiter,
 
 You are probably reading this post because you failed to approach me in a way that was in any way conducive to generating interest in working for your client. In the interest of getting fewer pitches that help nobody, I&rsquo;ve written this handy guide to pitching me. I suspect it will serve you well in pitching other engineers.
 
-### Actually Pitch Me
+## Actually Pitch Me
 
 Telling me you have an opportunity is not pitching me. Telling me vague details about your opportunity is not pitching me. Telling me that there is an opportunity for me to work in {programming language} and {framework} backed by {database} in {broad industry} {buzzword} {buzzword} {buzzword} does absolutely nothing for me except lead me to suspect that you are ashamed of your client and don&rsquo;t want to tell me who it is until I&rsquo;ve invested in the idea of working for them. That, or your client is embarrassed to be hiring or considers it a competitive secret.
 
@@ -18,13 +18,13 @@ Everyone is hiring. It&rsquo;s not a secret. There&rsquo;s absolutely no good re
 
 Your client should be part of the pitch because I don&rsquo;t work with technologies, I work with people. I want to know about your company, I want to know what&rsquo;s important to them, I want to know what they are like to work with. Telling me their stack and nothing else is useless.
 
-### Know Something About Me
+## Know Something About Me
 
 I [speak](/talks) frequently. I [tweet](https://twitter.com/paddyforan) constantly. I [blog](/posts) occasionally. I dominate the first few pages of Google search results for my name. I&rsquo;m not saying you need to know everything about me, but c&rsquo;mon, at least know when your job is obviously not a good fit. If you try to pitch me a Ruby job, there&rsquo;s a 100% chance I'm hitting the &ldquo;Mark As Spam&rdquo; button before I even finish reading your pitch, because you obviously did absolutely no research. If you try to pitch me a job that has a degree as a minimum requirement, I&rsquo;m going to snarkily ask if you&rsquo;re going to give me the degree, too. C&rsquo;mon.
 
 Yes, it takes time to do research, but it&rsquo;s a competitive market, and I am not being paid to respond to recruiters. You are being paid to contact me. Clearly, one of us should have the responsibility for determining if this is a good fit, and it&rsquo;s probably not me.
 
-### Don&rsquo;t Ask Me To Call You
+## Don&rsquo;t Ask Me To Call You
 
 You know who I talk to on the phone?
 
@@ -36,13 +36,13 @@ Talking to you on the phone is, 100% of the time, an absolutely useless exercise
 
 The only exception to this is if you&rsquo;re actually making decisions as to who to hire and who to advance through the hiring process; in all other cases, the phone call to you is going to be followed up by a phone call with someone who can actually make decisions, and the phone call with you will achieve nothing.
 
-### Recognise Bad Timing
+## Recognise Bad Timing
 
 Look, if my LinkedIn profile shows I just started a job three months ago, I am almost certainly not looking to move jobs right now. If I _am_, I&rsquo;ll be quietly approaching companies, not the other way around.
 
 If you pitch me a job, even a job I want, when I have just started at another company, I&rsquo;m almost certain to either A) tell you &ldquo;Sorry, bad timing&rdquo; or B) not respond at all, depending on how good the rest of your pitch was.
 
-### In Conclusion
+## In Conclusion
 
 Your job is not to get me invested in the opportunity. That is the company&rsquo;s job, by creating an exciting opportunity. Your job is to find good matches for that opportunity and to make the process from discovery to hiring easier. Your job is actually really cool; you get to help people find their dream jobs. And there&rsquo;s no reason for anyone to dread an email from you if you do your job properly, because you should be contacting people when you think you&rsquo;ve found a really exciting opportunity that they&rsquo;d love to take advantage of. And who doesn&rsquo;t love hearing &rdquo;Hey look at this really cool adventure! Do you want to take part?&rdquo;
 
