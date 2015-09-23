@@ -7,7 +7,7 @@ img:
   title: Ground Sail Windmills
   link: https://flic.kr/p/jLM9TC
 ---
-My name&rsquo;s Paddy. I live in Brooklyn, New York with my [fianc&eacute;](https://twitter.com/carver_ethan) and [our puppy](https://twitter.com/RoxyThePuppy). I write software, give [talks]({{ site.baseurl }}/talks), and inflict my [opinions]({{ site.baseurl }}/posts) on anyone who will listen.
+My name&rsquo;s Paddy. I live in Richland, Washington with my [fianc&eacute;](https://twitter.com/carver_ethan) and [our puppy](https://twitter.com/RoxyThePuppy). I write software, give [talks]({{ site.baseurl }}/talks), and inflict my [opinions]({{ site.baseurl }}/posts) on anyone who will listen.
 
 I started the [gets by](http://getsby.co) project because I think mental illness is something we should talk about.
 
