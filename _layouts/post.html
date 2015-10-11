@@ -3,7 +3,7 @@ layout: base
 ---
 <article>
 {% if page.img %}<img src="{{ site.baseurl }}/img/posts/{{ page.img.file }}" class="cover-image" />
-<p class="cover-image-attribution">{% if page.img.title %}{% if page.img.link %}<a href="{{ page.img.link }}" title="{{ page.img.title }}">{% endif %}<em>{{ page.img.title }}</em>{% if page.img.link %}</a>{% endif %}{% else %}Cover image{% endif %} by {{ page.img.attr }}</p>
+{% if page.img.title or page.img.attr %}<p class="cover-image-attribution">{% if page.img.title %}{% if page.img.link %}<a href="{{ page.img.link }}" title="{{ page.img.title }}">{% endif %}<em>{{ page.img.title }}</em>{% if page.img.link %}</a>{% endif %}{% else %}Cover image{% endif %} by {{ page.img.attr }}</p>{% endif %}
 {% endif %}
 <header class="entry-header">
 <h1 class="entry-title">{{ page.title }}</h1>
