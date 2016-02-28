@@ -1,0 +1,35 @@
+          </main><!-- #main -->
+        </div><!-- #primary -->
+
+
+      </div><!-- #content -->
+
+      <footer id="colophon" class="site-footer" role="contentinfo">
+      <div class="site-info">
+	      <p>Like what you see? <a href="{{ if .Section }}{{ $.Scratch.Get "sectionRSS" | absURL }}{{ else }}{{ .Site.RSSLink }}{{ end }}" title="Subscribe" class="subscribe-link">Subscribe</a> to get more or <a href="https://twitter.com/paddyforan" title="Paddy's Twitter profile">follow Paddy on Twitter</a>.</p>
+      </div>
+      </footer>
+    </div>
+    {{ if isset .Params "has_tweet" }}<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>{{ end }}
+    <script type="text/javascript">
+      var subscribeLink = document.getElementsByClassName("subscribe-link");
+      if(subscribeLink) {
+        for (var i = 0; i < subscribeLink.length; i++) {
+          subscribeLink[i].onclick=function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z); return false};
+        }
+      }
+      var _gauges = _gauges || [];
+      (function() {
+         var t   = document.createElement('script');
+         t.type  = 'text/javascript';
+         t.async = true;
+         t.id    = 'gauges-tracker';
+         t.setAttribute('data-site-id', '501b78b8613f5d5feb000002');
+         t.src = '//secure.gaug.es/track.js';
+         var s = document.getElementsByTagName('script')[0];
+         s.parentNode.insertBefore(t, s);
+         }
+      )();
+    </script>
+  </body>
+</html>

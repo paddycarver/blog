@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ if .Title }}{{ .Title }}{{ else }}Tilting at Windmills{{ end }}</title>
+    <meta property="og:title" content="paddy.io: {{ if .Title }}{{ .Title }}{{ else }}Open Web Cheerleader{{ end }}" />
+    <meta itemprop="name" content="paddy.io: {{ if .Title }}{{ .Title }}{{ else }}Open Web Cheerleader{{ end }}" />
+    <meta property="og:type" content="blog" />
+    <meta property="og:url" content="{{ .URL | absURL }}" />
+    <meta property="og:image" content="{{ "/img/paddy.jpg" | absURL }}" />
+    <meta itemprop="image" content="{{ "/img/paddy.jpg" | absURL }}">
+    <meta property="og:site_name" content="paddy.io" />
+    <meta property="og:description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ end }}" />
+    <meta itemprop="description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ end }}">
+    <meta property="fb:admins" content="1274456118" />
+
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,700">
+    <link rel="stylesheet" type="text/css" href="{{ "/css/syntax.css" | absURL }}" />
+    <link rel="stylesheet" href="{{ "/css/style.css" | absURL }}" />
+    <link rel="alternate" type="application/rss+xml" title="paddy.io{{ if .Section }}: {{ .Section }}{{ end }}" href="{{ if .Section }}{{ $.Scratch.Add "sectionRSS" "/" }}{{ $.Scratch.Add "sectionRSS" .Section }}{{ $.Scratch.Add "sectionRSS" "/index.xml" }}{{ $.Scratch.Get "sectionRSS" | absURL }}{{ else }}{{ .Site.RSSLink }}{{ end }}" />
+  </head>
+
+  <body>
+    <div id="page" class="hfeed site">
+
+      <header id="masthead" class="site-header" role="banner">
+      <div class="site-branding">
+        <h1 class="site-title"><a href="{{ .Site.BaseURL }}" rel="home"><img src="{{ "/img/avatar.jpg" | absURL }}" class="avatar"/> paddy.io</a></h1>
+        <h2 class="site-description">impractical zealot</h2>
+      </div>
+
+      <ul class="main-navigation">
+        <li class="extendednav"><a href="{{ .Site.BaseURL }}">Home</a></li>
+	<li><a href="{{ "/posts/" | absURL }}">Posts</a></li>
+	<li><a href="{{ "/talks/" | absURL }}">Talks</a></li>
+	<li class="extendednav"><a href="{{ .RSSlink }}" title="Subscribe" class="subscribe-link">Subscribe</a></li>
+      </ul>
+      </header><!-- #masthead -->
+
+      <div id="content" class="site-content">
+
+        <div id="primary" class="content-area">
+          <main id="main" class="site-main" role="main">

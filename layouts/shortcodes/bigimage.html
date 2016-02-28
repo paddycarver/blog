@@ -1,0 +1,3 @@
+<div class="bigimage">
+{{ with .Get "link" }}<a href="{{ . }}">{{ end }}<img src="{{ .Get "src" }}"{{ with .Get "title" }} alt="{{ . }}"{{ end }} />{{ if .Get "link" }}</a>{{ end }}
+</div>

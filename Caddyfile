@@ -1,0 +1,4 @@
+localhost:4000
+gzip
+log /dev/stdout
+root ./public

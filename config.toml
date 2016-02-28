@@ -1,0 +1,5 @@
+baseurl = "https://paddy.io"
+pygmentsuseclasses = true
+
+[params]
+description = "The personal site of Paddy, an impractical zealot known to tilt at windmills."
