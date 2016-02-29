@@ -1,8 +1,8 @@
 +++
 title = "App Engine Channels and Chrome Extensions"
-url = "/posts/app-engine-channels-and-chrome"
+url = "/posts/app-engine-channels-and-chrome-extensions"
 date = 2010-12-08T00:27:00Z
-aliaes = ["/posts/app-engine-channels-and-chrome-extensions"]
+aliaes = ["/posts/app-engine-channels-and-chrome", "/2010/12/app-engine-channels-and-chrome.html"]
 +++
 
 Google’s latest toy for [App Engine](http://appengine.google.com/), its [Channel API](http://code.google.com/appengine/docs/python/channel/), is really a cool tool. It gives you Comet support on a _free_ webhost. That’s a phenomenal achievement, in my mind. I was [given early access to it](http://blog.android2cloud.org/2010/08/channel-api.html), to build the [android2cloud](http://code.google.com/p/android2cloud) web server with its technology, to relieve [our polling woes](http://blog.android2cloud.org/2010/08/servers-and-money.html). And I tested it, and it worked great.

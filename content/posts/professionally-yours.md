@@ -2,6 +2,7 @@
 title = "Professionally Yours"
 url = "/posts/professionally-yours"
 date = 2011-07-20T23:02:00Z
+aliases = ["/2011/07/professionally-yours.html"]
 +++
 
 We’ve been running a [feedback survey for 2cloud](https://spreadsheets.google.com/spreadsheet/viewform?hl=en_US&formkey=dFV5bXBDMzk2OTFVNFRsX0RYLXRKYWc6MQ#gid=0 "2cloud Feedback Survey on Google Docs") for a couple of weeks now, trying to get a sense of how we’re doing with the project. We’ve gotten some great responses (if they’re not from you, please go ahead and take two minutes to fill out the form. We are leaving it open indefinitely), but one response we got bothered me:

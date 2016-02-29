@@ -2,6 +2,7 @@
 title = "In Support of @Spaz"
 url = "/posts/in-support-of-spaz"
 date = 2010-04-28T06:22:00Z
+aliases = ["/2010/04/in-support-of-spaz.html"]
 +++
 
 I can’t believe I’m advertising _here_. OK, yes I can, but still. Makes me feel all sorts of cheap.

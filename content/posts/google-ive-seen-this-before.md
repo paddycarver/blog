@@ -2,6 +2,7 @@
 title = "Google+: I’ve Seen This Before"
 url = "/posts/google-ive-seen-this-before"
 date = 2011-06-30T04:50:00Z
+aliases = ["/2011/06/google-ive-seen-this-before.html"]
 +++
 
 I’m pretty fortunate. In fact, I’m doubly fortunate.

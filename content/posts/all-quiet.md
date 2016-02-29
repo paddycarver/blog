@@ -2,6 +2,7 @@
 title = "All Quiet"
 url = "/posts/all-quiet"
 date = 2010-05-22T18:39:00Z
+aliases = ["/2010/05/all-quiet.html"]
 +++
 
 I started out to write this post thinking I hadn’t written anything for this site in quite some time. Actually, I wrote a post here four days ago. Seems like that was a long time ago. Probably because I’ve done so much in between then and now. My last post was on Tuesday; let’s recap what has happened since then.

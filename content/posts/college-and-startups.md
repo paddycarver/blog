@@ -2,8 +2,8 @@
 date = "2011-08-22"
 summary = "College students and startup founders lead very similar lives and have oddly similar goals. Our youth, fresh out of high school, are being encouraged to pursue one of these lifestyles, however, and I have to wonder whether it is the right one."
 title = "College & Startups"
-url = "/posts/college-startups"
-aliases = ["/posts/college-and-startups"]
+url = "/posts/college-and-startups"
+aliases = ["/posts/college-startups", "/2011/08/college-startups.html"]
 +++
 
 

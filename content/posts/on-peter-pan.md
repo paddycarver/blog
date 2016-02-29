@@ -2,6 +2,7 @@
 title = "On Peter Pan"
 url = "/posts/on-peter-pan"
 date = "2010-08-18T02:18:00Z"
+aliases = ["/2010/08/on-peter-pan.html"]
 +++
 
 It’s probably pretty obvious, but I have a _huge_ [Peter Pan complex](http://en.wikipedia.org/wiki/Peter_pan_complex). I blame my parents for this (they made my song “[Forever Young](http://www.youtube.com/watch?v=2gVsQZ2hVj8)—the Rod Stewart version, not the [Jay-Z version](http://www.youtube.com/watch?v=E1nbvplgElw)—when I was young), but it probably stems from a lot of things. Regardless, I’ve always had a fascination with Peter Pan. My favourite portrayal so far has to be the [2003 version](http://www.imdb.com/title/tt0316396/) starring [Jeremy Sumpter](http://www.jeremysumpter.com/), but I got the chance to watch [Hook](http://www.imdb.com/title/tt0102057/) the other day, and I thoroughly enjoyed it.

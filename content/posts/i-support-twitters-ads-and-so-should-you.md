@@ -1,8 +1,8 @@
 +++
 title = "I Support Twitter’s Ads, and So Should You"
-url = "/posts/i-support-twitter-ads-and-so-should-you"
+url = "/posts/i-support-twitters-ads-and-so-should-you"
 date = 2010-04-26T01:05:00Z
-aliases = ["/posts/i-support-twitters-ads-and-so-should-you"]
+aliases = ["/posts/i-support-twitter-ads-and-so-should-you", "/2010/04/i-support-twitter-ads-and-so-should-you.html"]
 +++
 
 Ok, so pretty much anyone who’s tech-savvy knows by now that Twitter has started “embedding” ads in its search results. Embedding is in quotes because Twitter will say it’s the wrong word. They like “promoting”.

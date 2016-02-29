@@ -2,6 +2,7 @@
 title = "On App Engine’s Pricing Change"
 url = "/posts/on-app-engines-pricing-change"
 date = "2011-09-03T04:55:00Z"
+aliases = ["/2011/09/on-app-engines-pricing-change.html"]
 +++
 
 By now, most of you running [App Engine](http://appengine.google.com "Google App Engine") applications have received the dreaded email: App Engine is leaving beta. Normally, that’d be a great thing. But as they announced at I/O, that means the pricing structure is changing, because now they need to actually pay for their operation; in other words, they can’t keep operating at a loss. So the pricing structure was simplified a bit, and prices were hiked.

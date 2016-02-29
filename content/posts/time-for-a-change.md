@@ -1,8 +1,8 @@
 +++
 title = "Time for a Change?"
-url = "/posts/time-for-change"
+url = "/posts/time-for-a-change"
 date = "2011-05-18T19:07:00Z"
-aliases = ["/posts/time-for-a-change"]
+aliases = ["/posts/time-for-change", "/2011/05/time-for-change.html"]
 +++
 
 It’s the end of my third year in college. I’m miserable. I hate the standards they hold me to. I kid you not, my final for a class _discouraged me_ from using independent thought. It told me it wanted nothing more than to show I could engage literature on its own turf. "Don’t think about it, just be able to work with it." That’s not the kind of education I want.

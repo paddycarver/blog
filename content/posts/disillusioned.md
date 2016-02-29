@@ -2,6 +2,7 @@
 title = "Disillusioned"
 url = "/posts/disillusioned"
 date = 2011-09-08T20:00:00Z
+aliases = ["/2011/09/disillusioned.html"]
 +++
 
 I’ve been meaning to write a post about companies and users, and what I believe their relationship should be. [Tino](http://www.twitter.com/tinogalizio) and I have had some very good conversations about it, and he’s helped me to get a better grasp on my views on the matter. I don’t have a full handle on it yet, but I’m getting there. I’d really like to have done that post before I did this one, but it’s going to have to wait. Today pretty much broke my spirit.

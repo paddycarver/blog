@@ -2,6 +2,7 @@
 title = "Remembering Why I Write Software"
 url = "/posts/remembering-why-i-write-software"
 date = "2011-06-10T15:48:00Z"
+aliases = ["/2011/06/remembering-why-i-write-software.html"]
 +++
 
 I’ve worked on [2cloud](http://links.2cloudproject.com/homepage "2cloud") for almost a year now. Since its inception, it has been used by tens of thousands of people, covered by dozens of publications large and small, and entered the lexicon of Android development. My professional career has been advanced by it and my personal network of friends has been augmented by some truly wonderful people I would not have met, were it not for the exposure this application received.

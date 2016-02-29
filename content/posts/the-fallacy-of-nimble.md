@@ -1,8 +1,8 @@
 +++
 title = "The Fallacy of “Nimble”"
-url = "/posts/fallacy-of-nimble"
+url = "/posts/the-fallacy-of-nimble"
 date = "2012-01-23T20:21:00Z"
-aliases = ["/posts/the-fallacy-of-nimble"]
+aliases = ["/posts/fallacy-of-nimble", "/2012/01/fallacy-of-nimble.html"]
 +++
 
 It’s one of my favourite perks of being a small (one programmer, one manager/business guy) tech company: we’re “nimble”. What does nimble mean? Nimble means when you have that niggling annoyance, I can fix it in front of your eyes. Nimble means that when we figure out our product is wrong and we need to pivot, we don’t throw too much away. Nimble means that the time between a decision getting made and palpable effects of that decision being visible to users is minimal, sometimes non-existent.

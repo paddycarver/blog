@@ -1,8 +1,8 @@
 +++
 title = "What I’ve Been Up To"
-url = "/posts/what-i-been-up-to"
+url = "/posts/what-ive-been-up-to"
 date = "2010-05-12T11:43:00Z"
-aliases = ["/posts/what-ive-been-up-to"]
+aliases = ["/posts/what-i-been-up-to", "/2010/05/what-i-been-up-to.html"]
 +++
 
 OK, so I haven’t written here in a _little_ while. Not nearly as long as some of my writing dry spells. But I’ve been busy! Not in the “so I didn’t have time to write” way, but in the “so I have cool stuff to share with you guys” way.

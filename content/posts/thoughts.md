@@ -2,6 +2,7 @@
 title = "Thoughts"
 url = "/posts/thoughts"
 date = 2010-06-30T16:59:00Z
+aliases = ["/2010/06/thoughts.html"]
 +++
 
 I’ve been thinking a lot lately. This is a largely unintentional side-effect of some current personal life happenings that I won’t share, simply to save you the whining. And yet it remains, there have been a lot of thoughts bouncing around in my skull. I’m sure I’ve been annoying my friends, texting and IMing them about some pretty abstract things.

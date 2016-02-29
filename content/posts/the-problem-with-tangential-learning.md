@@ -1,8 +1,8 @@
 +++
 title = "The Problem With Tangential Learning"
-url = "/posts/problem-with-tangential-learning"
+url = "/posts/the-problem-with-tangential-learning"
 date = "2011-07-22T03:21:00Z"
-aliases = ["/posts/the-problem-with-tangential-learning"]
+aliases = ["/posts/problem-with-tangential-learning", "/2011/07/problem-with-tangential-learning.html"]
 +++
 
 Last Thursday, my roommate turned 21. For her birthday, I baked her a batch of brownies. As college students, we don’t have the world’s greatest kitchen for baking (she _told_ me she had everything! Steph, if you’re reading this, your lies haunt my soul), so I had to make do with a less-than-ideal dish. It was too small in surface area, so the brownies ended up nice and thick. Which would totally be cool, if it didn’t make baking them such a challenge. I was kept on my toes trying to keep the outer edges from burning while cooking the entire middle so we didn’t end up with spots of raw brownies. In the end, it was a middling success (but, fortunately, it being her 21st birthday, I think she was too drunk to care).
