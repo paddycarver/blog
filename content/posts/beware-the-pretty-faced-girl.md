@@ -1,7 +1,8 @@
 +++
 title = "Beware the Pretty-Faced Girl"
-url = "/posts/beware-the-pretty-faced-girl"
+url = "/posts/beware-pretty-faced-girl"
 date = 2010-04-19T19:59:00Z
+aliases = ["/posts/beware-the-pretty-faced-girl"]
 +++
 
 It’s astonishing how quickly forget one of the most important lessons in life, just because it’s applicable somewhere unexpected: _if something seems too good to be true, it probably is_. Why then, do we not hear words like “magical” and “revolutionary” and become suspicious, as we should, instead of fawning and yammering on excitedly about the future?

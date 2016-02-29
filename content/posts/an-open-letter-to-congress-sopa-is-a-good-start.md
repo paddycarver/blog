@@ -1,7 +1,8 @@
 +++
 title = "An Open Letter To Congress: SOPA Is A Good Start"
-url = "/posts/an-open-letter-to-congress-sopa-is-a-good-start"
+url = "/posts/open-letter-to-congress-sopa-is-good"
 date = 2011-12-17T02:46:00Z
+aliases = ["/posts/an-open-letter-to-congress-sopa-is-a-good-start"]
 +++
 
 Dear Congress,

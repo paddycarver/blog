@@ -1,7 +1,8 @@
 +++
 title = "Tips and Secrets for Dealing With App Engine"
-url = "/posts/tips-and-secrets-for-dealing-with-app-engine"
+url = "/posts/tips-and-secrets-for-dealing-with-app"
 date = "2011-07-31T02:58:00Z"
+aliases = ["/posts/tips-and-secrets-for-dealing-with-app-engine"]
 +++
 
 Google’s [App Engine](http://appengine.google.com "Google App Engine") is a wonderful, amazing, and revolutionary service. A free, managed hosting experience in which you can build scalable applications. That is _huge_. I can honestly say I would not know half the things I know or have half the relationships I have with the tech world, were it not for this program. It makes writing server-side software simple; it allows you to only know about writing the software, and not having to worry about system level vulnerabilities, system load, or scaling headaches. I don’t have to think about things like iptables, SSH permission levels, or other ways nasty people who are better sysadmins than I am can get into my application. I don’t have to worry about hard drive failures at 3 in the morning. Rather, it just asks me to be a programmer.

@@ -1,7 +1,8 @@
 +++
 title = "I’m a Shakespeare of Software"
-url = "/posts/im-a-shakespeare-of-software"
+url = "/posts/i-shakespeare-of-software"
 date = 2010-08-02T12:28:00Z
+aliases = ["/posts/im-a-shakespeare-of-software"]
 +++
 
 I wear funny clothes and people will remember me for centuries to come.

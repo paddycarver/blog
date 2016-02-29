@@ -1,7 +1,8 @@
 +++
 title = "Logging the Channel API"
-url = "/posts/logging-the-channel-api"
+url = "/posts/logging-channel-api"
 date = 2011-03-29T23:37:00Z
+aliases = ["/posts/logging-the-channel-api"]
 +++
 
 We’re having a bit of an issue at [the 2cloud Project](http://www.2cloudproject.com/). We’re getting reports of the [Channel API](http://code.google.com/appengine/docs/python/channel) throwing [iFrame errors about illegal access](http://help.2cloudproject.com/discussions/problems/51-says-sent-to-cloud-but-never-opens-up-on-chrome). Considering the Channel API is based on Google’s [Closure](http://code.google.com/p/closure-library/) library’s [XPC library](http://closure-library.googlecode.com/svn/!svn/bc/4/trunk/closure/goog/docs/class_goog_net_xpc_CrossPageChannel.html), which uses iFrames, I had a feeling the issue wasn’t on our end. Unfortunately, neither I nor Moishe could figure out why this was happening—we both agreed it shouldn’t be.

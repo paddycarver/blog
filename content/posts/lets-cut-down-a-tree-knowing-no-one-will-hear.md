@@ -1,7 +1,8 @@
 +++
 title = "Let’s Cut Down a Tree, Knowing No One Will Hear"
-url = "/posts/lets-cut-down-a-tree-knowing-no-one-will-hear"
+url = "/posts/let-cut-down-tree-knowing-no-one-will"
 date = 2010-05-17T22:45:00Z
+aliases = ["/posts/lets-cut-down-a-tree-knowing-no-one-will-hear"]
 +++
 
 A couple days ago, I read [Paul Carr](http://www.paulcarr.com "Seriously, this guy is my hero. Mainly because he’s proof I could actually have a future.")’s [thoughts](http://techcrunch.com/2010/05/16/worse-things-happen-at-sea/ "TL;DR: shut the hell up and quit whining.") on the growing number of complaints against Jobs, Zuckerberg, and Wales, CEOs of three of the most prominent tech companies. As I sat there reading his article, I was uncomfortably nodding my head. I was nodding because most of what he was saying (which, in case you don’t read my mouse-overs [you should], was essentially "Shut the hell up, and stop whining.") was absolutely spot on. It was uncomfortable because I _really, really_ wanted to hate Jobs.

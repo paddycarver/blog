@@ -1,7 +1,8 @@
 +++
 title = "A Return to My Roots"
-url = "/posts/a-return-to-my-roots"
+url = "/posts/return-to-my-roots"
 date = 2010-04-15T13:20:00Z
+aliases = ["/posts/a-return-to-my-roots"]
 +++
 
 I should be writing a paper right now. Two, actually. But a book review of [Go To](http://www.amazon.com/Engineers-Scientists-Iconoclasts-Programmers-Revolution/dp/0465042260/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1271365342&amp;sr=8-1 "Surprisingly, very inspiring and informational. I recommend it. Maybe not highly, but still a recommended read.") is nowhere near as interesting, and a response to [Shameful Flight](http://www.amazon.com/Shameful-Flight-Years-British-Empire/dp/0195393945/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1271365296&amp;sr=8-1 "It was a terrible book. Don’t read it.") is far too tedious. So, in a true return to my past, I’m writing a blog post instead of worrying about schoolwork. Such is life.
