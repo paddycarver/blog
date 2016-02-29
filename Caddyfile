@@ -1,4 +1,5 @@
-localhost:4000
-gzip
-log /dev/stdout
-root ./public
+paddy.io {
+  gzip
+  log / stdout "{when} [{remote}] {method} {scheme} {host} {uri} --> {status} {latency} {size}"
+  root /home/paddy/paddy-blog/public
+}
