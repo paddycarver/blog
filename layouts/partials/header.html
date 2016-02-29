@@ -15,7 +15,7 @@
     <meta itemprop="description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ end }}">
     <meta property="fb:admins" content="1274456118" />
 
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,700">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,700">
     <link rel="stylesheet" type="text/css" href="{{ "/css/syntax.css" | absURL }}" />
     <link rel="stylesheet" href="{{ "/css/style.css" | absURL }}" />
     <link rel="alternate" type="application/rss+xml" title="paddy.io{{ if .Section }}: {{ .Section }}{{ end }}" href="{{ if .Section }}{{ $.Scratch.Add "sectionRSS" "/" }}{{ $.Scratch.Add "sectionRSS" .Section }}{{ $.Scratch.Add "sectionRSS" "/index.xml" }}{{ $.Scratch.Get "sectionRSS" | absURL }}{{ else }}{{ .Site.RSSLink }}{{ end }}" />
