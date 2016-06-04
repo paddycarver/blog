@@ -1,10 +1,9 @@
 +++
-date = "2016-05-14T14:09:58-07:00"
+date = "2016-06-04T04:48:58-07:00"
 has_tweet = false
 summary = "I’ve started to talk more about and develop more ideas around being impractical, so it’s probably past due for me to write about what it means to me."
 title = "On Being Impractical"
 url = "/posts/impractical"
-draft = True
 
 [quote]
   attr = "Joan Gilbert"
