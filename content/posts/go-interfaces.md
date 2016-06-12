@@ -58,7 +58,7 @@ I made storing or retrieving data an interface type:
 {{< highlight go >}}
 type Storer interface {
 	Store(ctx context.Context, thingToStore Thing) (Thing, error)
-  Retrieve(ctx context.Context, idOfThing string) (Thing, error)
+	Retrieve(ctx context.Context, idOfThing string) (Thing, error)
 }
 {{< /highlight >}}
 
@@ -71,7 +71,7 @@ I shouldn’t be validating or filling in defaults in my `Store` methods; it was
 {{< highlight go >}}
 type Storer interface {
 	Store(ctx context.Context, thingToStore Thing) error
-  Retrieve(ctx context.Context, idOfThing string) (Thing, error)
+	Retrieve(ctx context.Context, idOfThing string) (Thing, error)
 }
 {{< /highlight >}}
 
