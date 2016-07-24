@@ -22,24 +22,24 @@ From there, I saw the usefulness of the empty interface: `interface{}`. This is 
 
 As I started doing more with Go, I learned about type assertion.
 
-{{< highlight go >}}
+```go
 var i interface{}
 i = "hello"
 str := i.(string)
-{{< /highlight >}}
+```
 
 And that was useful-looking. But I was coming from Python, where I would often change the type of something somewhere in my code, then forget to change it elsewhere in my code, and then I’d get an uncaught exception at runtime and everything would blow up and I was _not_ a huge fan of that. And if `i` is somehow not a string in the example above, you get a panic. So this made me nervous. I felt like I was taking very careful aim at my foot.
 
 Then I learned that the “comma OK” pattern was being followed for type assertions. Meaning I can do this:
 
-{{< highlight go >}}
+```go
 var i interface{}
 i = "world"
 str, ok := i.(string)
 if !ok {
 	fmt.Println("`i` wasn’t a string, you should probably return an error or something")
 }
-{{< /highlight >}}
+```
 
 And that made me feel a little better. I can have error handling around it! That’s nice. But it still felt a little dangerous. (That’s because it is a little dangerous!)
 
@@ -55,12 +55,12 @@ But at this point, things didn’t really click just yet. It took wanting to use
 
 I made storing or retrieving data an interface type:
 
-{{< highlight go >}}
+```go
 type Storer interface {
 	Store(ctx context.Context, thingToStore Thing) (Thing, error)
 	Retrieve(ctx context.Context, idOfThing string) (Thing, error)
 }
-{{< /highlight >}}
+```
 
 As I wrote, I’d write the business logic and the logic for one database. Then I’d write the logic for the next database. And I’d find that sometimes the API I desired for the business logic meant I was doing validation in the database logic. Which meant that sometimes my two databases would validate things differently, as code drifted. Or I would have each database fill in default values when `Store` gets called, and that meant doing it twice, possibly inconsistently. (That’s why the `Thing` return value exists for the `Store` method above; to send back the values that actually got stored.)
 
@@ -68,18 +68,18 @@ As I wrote more, this became more annoying and more of a headache. It wasn’t w
 
 I shouldn’t be validating or filling in defaults in my `Store` methods; it was a `Store` method, not a `FillAndValidateAndStore` method. I made it simpler:
 
-{{< highlight go >}}
+```go
 type Storer interface {
 	Store(ctx context.Context, thingToStore Thing) error
 	Retrieve(ctx context.Context, idOfThing string) (Thing, error)
 }
-{{< /highlight >}}
+```
 
 Suddenly, I knew what my interface was for and what responsibilities it had: its `Store` method needed to persist the data it was given, _exactly_ as it was given the data. If it couldn’t, it needed to return an error. That’s it. That’s its one job. Similarly, `Retrieve` needed to pull the data back out, and that’s it. If it couldn’t, it needed to return an error.
 
 This definition was helpful for testing: to know if I had implemented the interface correctly, I could just store something, retrieve it, then compare whatever I retrieved to what was stored. They should match.
 
-{{< highlight go >}}
+```go
 type Thing struct {
 	Name string
 }
@@ -99,7 +99,7 @@ func TestStorer(t *testing.T) {
 		t.Errorf("Expected %+v from %T, got %+v\n", thing, storer, retrieved)
 	}
 }
-{{< /highlight >}}
+```
 
 What I didn’t anticipate was how helpful this definition would be for communicating and reasoning about my code. It helped me split things into defined chunks with explicit boundaries and defined responsibilities.
 

@@ -18,7 +18,7 @@ Our problem (today) is, once we get the user authenticated, we need to keep trac
 
 Fortunately, someone [smarter than me](http://learn.humanjavascript.com/react-ampersand/introduction) has [an example](https://github.com/HenrikJoreteg/hubtags.com/blob/47dca17ef9fe58404a7f83b05c65bd01fa3cd268/src/models/me.js) for how to do that using `ampersand-model`. So we’re going to copy Henrik’s “Me” model:
 
-{{< highlight javascript >}}
+```javascript
 import Model from 'ampersand-model'
 
 export default Model.extend({
@@ -31,7 +31,7 @@ export default Model.extend({
     profileID: 'string',
   },
 })
-{{< /highlight >}}
+```
 
 So far, so good. We’ve got a basic model with some properties. Nothing earth-shattering here.
 
@@ -43,16 +43,16 @@ For now, we’re just going to assume you get a populated `Me` instance, somehow
 
 We want to be able to cache that information in localStorage. The helper to do that is tiny:
 
-{{< highlight javascript >}}
+```javascript
 writeToCache () {
   const data = JSON.stringify(this)
   localStorage.setItem('me', data)
 }
-{{< /highlight >}}
+```
 
 Super silly simple, right? Let’s put it all together to just highlight how silly it is that I’m writing a whole blog post about this:
 
-{{< highlight javascript >}}
+```javascript
 import Model from 'ampersand-model'
 
 export default Model.extend({
@@ -69,7 +69,7 @@ export default Model.extend({
     localStorage.setItem('me', data)
   },
 })
-{{< /highlight >}}
+```
 
 You’ll notice that we’re using `JSON.stringify(this)` instead of `this.toJSON()`. If you check [the docs](https://ampersandjs.com/docs#ampersand-state-tojson), you’ll see that `this.toJSON()` does not, in fact, do what you think it does (emphasis mine):
 
@@ -81,7 +81,7 @@ I draw attention to this because it bit me. The moral of the story is that `this
 
 Continuing on our journey, however, it occurs to me that if you’re going to store your data, you should probably, at some point, load it. After all, if data is stored in a forest, and no, uh, trees are there to, err, load… you know what, never mind. Point is, saving data and not loading it is rather silly. So let’s write a helper!
 
-{{< highlight javascript >}}
+```javascript
 load () {
   const data = localStorage.getItem('me')
   if (data) {
@@ -90,13 +90,13 @@ load () {
   }
   return this
 }
-{{< /highlight >}}
+```
 
 Super exciting, right? Pull the string out of localStorage, and if it worked, parse the JSON string into a Plain Ol’ JavaScript Object. Once that’s done, use it to update the `Me` model with [`set`](https://ampersandjs.com/docs#ampersand-state-set).
 
 So to keep our running sample all together:
 
-{{< highlight javascript >}}
+```javascript
 import Model from 'ampersand-model'
 
 export default Model.extend({
@@ -121,7 +121,7 @@ export default Model.extend({
     return this
   },
 })
-{{< /highlight >}}
+```
 
 ## Set It & Forget It
 
@@ -135,7 +135,7 @@ That sounds super handy. Let’s hook it up!
 
 In your `main.js`, or whatever file is serving as the entrypoint for your app, include this:
 
-{{< highlight javascript >}}
+```javascript
 import app from 'ampersand-app'
 import Me from './me'
 
@@ -147,7 +147,7 @@ window.app = app.extend({
 })
 
 app.init()
-{{< /highlight >}}
+```
 
 That’s just your basic [`ampersand-app`](https://github.com/ampersandjs/ampersand-app) setup. We’re attaching an instance of your `Me` model to the app singleton, so we can refer to the same instance throughout our application. Then we’re listening for changes to our instance, and calling its `writeToCache` function when changes occur. This means whenever the tokens change, they _automatically_ get persisted to localStorage _for you_. You don’t even have to think about it.
 
@@ -159,7 +159,7 @@ The trick is to _debounce_ the `writeToCache` function. That just means that the
 
 Here are the modifications you need:
 
-{{< highlight javascript >}}
+```javascript
 import Model from 'ampersand-model'
 import debounce from 'lodash.debounce'
 
@@ -188,13 +188,13 @@ export default Model.extend({
     return this
   },
 })
-{{< /highlight >}}
+```
 
 All we did was add an `initialize` function to our `Me` model, and have it set `this.debouncedWriteToCache` to be a debounced version of `writeToCache`, so multiple calls within 250 milliseconds are turned into a single call. There’s no reason we should be modifying our tokens more than once every 250 milliseconds, anyways.
 
 That done, we can update our application bootstrap to use the debounced version:
 
-{{< highlight javascript >}}
+```javascript
 import app from 'ampersand-app'
 import Me from './me'
 
@@ -206,7 +206,7 @@ window.app = app.extend({
 })
 
 app.init()
-{{< /highlight >}}
+```
 
 Now no matter how many properties change, you only write to localStorage once. Hooray!
 
@@ -214,7 +214,7 @@ OK, so we have saving taken care of automatically and we don’t need to think a
 
 That’s actually phenomenally simple. Ready for this big code change?
 
-{{< highlight javascript >}}
+```javascript
 import app from 'ampersand-app'
 import Me from './me'
 
@@ -226,7 +226,7 @@ window.app = app.extend({
 })
 
 app.init()
-{{< /highlight >}}
+```
 
 Yeah, we added `.load()` to the end of our instantiation for `this.me`. Super exciting stuff. It just loads the tokens out of localStorage when your app starts up.
 

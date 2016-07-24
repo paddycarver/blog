@@ -13,27 +13,27 @@ For quite some time now, I have vocally denounced clever programming tricks.
 
 Yes, yes, your one-liners are cute. But bytes are cheap and I _need to read that, goddammit_, so please stop obscuring what the software actually _does_. The correct syntax to use, in my humble opinion, is always the syntax that most clearly demonstrates what you are trying to achieve.
 
-{{< highlight ruby >}}
+```ruby
 y = if x ? 1 : 2
-{{< /highlight >}}
+```
 
 That makes me cry. Please don’t do that.
 
-{{< highlight ruby >}}
+```ruby
 if x
     y = 1
 else
     y = 2
 end
-{{< /highlight >}}
+```
 
 See how much clearer that is?
 
 And I thought this was a pretty straight-forward stance on the issue: clarity good, clever tricks bad. It’s the reason I dislike Ruby so much; the community seems to revel in writing code that is impossible for a reader to decipher without carefully picking through it. On a related note, whoever thought letting statements come before their conditionals was a good idea makes me sad.
 
-{{< highlight ruby >}}
+```ruby
 puts "Hello" if x
-{{< /highlight >}}
+```
 
 But then, as I was thinking about Go, C, and the early innovators of computing, I became conflicted. Because so much of what they did was clever. I admired those people, I aspired to be like them, and it threw me pretty badly to realise that they were clever.
 

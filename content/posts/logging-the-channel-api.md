@@ -11,15 +11,21 @@ Even worse, I didn’t have any logging mechanism for the Channel API at a low l
 
 It took me far too long to figure out that I couldn’t access Closure logs in Chrome, and it’s annoying to sort through that minified, compiled code to find where the logging is defined. So I’ll just tell you. [Download channel.js]({{< relref "posts/app-engine-channels-and-chrome-extensions.md" >}}), and search for `I.prototype.log`. Remove the following line:
 
-{{< highlight "javascript" >}}if(a.value >= wc(this).value) {{{< /highlight >}}
+```javascript
+if(a.value >= wc(this).value) {
+```
 
 Being sure to also remove the trailing brace, because you’re intelligent like that. Then, above
 
-{{< highlight "javascript" >}}p.console && p.console.markTimeline && p.console.markTimeline("log:" + a.Xb);{{< /highlight >}}
+```javascript
+p.console && p.console.markTimeline && p.console.markTimeline("log:" + a.Xb);
+```
 
 insert the following:
 
-{{< highlight "javascript" >}}console.log(a.Xb);{{< /highlight >}}
+```javascript
+console.log(a.Xb);
+```
 
 That’s it. enjoy your new, powerful, low-level Channel API logs.
 
