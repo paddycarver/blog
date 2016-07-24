@@ -7,8 +7,8 @@
 <header class="entry-header">
 <h1 class="entry-title">{{ .Title }}</h1>
 
-{{ if .Date }}<div class="entry-meta">
-  {{ .Date.Format "January 2, 2006" }}
+{{ if or .Date .FuzzyWordCount .ReadingTime }}<div class="entry-meta">
+  {{ if .Date }}{{ .Date.Format "January 2, 2006" }}{{ end }}{{ if and .Date .FuzzyWordCount }} · {{ end }}{{ if .FuzzyWordCount }}~{{ .FuzzyWordCount }} words{{ end }}{{ if and .FuzzyWordCount .ReadingTime }} ({{ end }}{{ if .ReadingTime }}{{ .ReadingTime }} min{{ end }}{{ if and .FuzzyWordCount .ReadingTime }}){{ end }}
 </div><!-- .entry-meta -->{{ end }}
 </header><!-- .entry-header -->
 
