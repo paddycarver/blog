@@ -1,10 +1,10 @@
 +++
-date = "2016-07-10T09:03:59-06:00"
+date = "2016-07-25T18:31:27-07:00"
 has_tweet = true 
 summary = "A brief summary of this post."
 title = "Contexts & Dependency Injection"
 url = "/posts/contexts-and-dependency-injection"
-draft = true
+draft = false
 +++
 
 Just before GopherCon, Peter Bourgon was tweeting about contexts and dependency injection. For background, Peter is someone whose best practices have rung true or been proven over time since he started talking about them (to my knowledge) at the first GopherCon. So when he [said](https://twitter.com/peterbourgon/status/752022730812317696) not to use [contexts](https://golang.org/x/net/context) as a way to manage dependency injection, I was pretty sad. That’s typically how I handle dependency injection.
@@ -19,6 +19,13 @@ To tell this story properly, we need to travel all the way back to when I was le
 
 ```go
 package main
+
+import (
+	"database/sql"
+	"fmt"
+
+	_ "github.com/go-sql-driver/mysql"
+)
 
 var db *sql.DB
 
@@ -51,6 +58,13 @@ Gustavo’s suggestion to me was that I simply pass my database connection (well
 ```go
 package main
 
+import (
+	"database/sql"
+	"fmt"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
 func main() {
 	myDB, err := sql.Open("mysql", "mysql-dsn-goes-here")
 	if err != nil {
@@ -82,16 +96,35 @@ func(w http.ResponseWriter, r *http.Request)
 
 That’s how you write an HTTP handler in Go, and it’s the entry point for any HTTP endpoint in your Go programs. (Unless you’re doing weird stuff with servers, I guess?) But there’s a problem… Where do I put my database connection now? I don’t get to pick my function signature anymore, I have to work within the constraints I’m given.
 
-We _could_ use a wrapper to modify the function signature but still be an http.Handler:
+We _could_ use a wrapper to modify the function signature but still be an `http.Handler`:
 
 ```go
+package main
+
+import (
+	"database/sql"
+	"net/http"
+	"strconv"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
+func main() {
+	myDB, err := sql.Open("mysql", "mysql-dsn-goes-here") 
+	if err != nil {
+		panic(err)
+	}
+	http.Handle("/", wrapDB(myDB, handler))
+	// ListenAndServe, you know the rest
+}
+
 func handler(w http.ResponseWriter, r *http.Request, db *sql.DB) {
 	count, err := getCount(db)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
-	w.Write([]byte(strconv.Itoa(count+" gophers")))
+	w.Write([]byte(strconv.Itoa(count) + " gophers"))
 }
 
 func wrapDB(db *sql.DB, next func(w http.ResponseWriter, r *http.Request, db *sql.DB)) http.Handler {
@@ -99,24 +132,52 @@ func wrapDB(db *sql.DB, next func(w http.ResponseWriter, r *http.Request, db *sq
 		next(w, r, db)
 	})
 }
+
+func getCount(db *sql.DB) (int, error) {
+	var count int
+	err := db.QueryRow("SELECT COUNT(*) FROM animals WHERE name=?", "gopher").Scan(&count)
+	return count, err
+}
 ```
 
 And that seems to be fine, right? Everything is great. Except we don’t need to embed a database. We need a database, and a logger, and a metrics collector, and a client for another HTTP service, and a…
 
 ## Adding Some Context
 
-Fortunately, There’s A Package For That. The [context](https://golang.org/x/net/context) package, mentioned in our opening, gives us a `Context` type. The `Context` type has [some concurrency tooling](https://blog.golang.org/context) it provides, but what we’re interested in right now is its ability to embed a value. By calling `context.WithValue(base, key, val)`. When using this, the `Context` held by `base` will have its `key` key set to `val`, overriding any previous value it held, if any, then returning a new `Context` type. `base` will not have the update, the returned `Context` will.
+Fortunately, There’s A Package For That. The [context](https://golang.org/x/net/context) package, mentioned in our opening, gives us a `Context` type. The `Context` type has [some concurrency tooling](https://blog.golang.org/context) it provides, but what we’re interested in right now is its ability to embed a value. The `Context` type can act as a map, letting us assign values to keys. (There’s a bit more to this, but it’s not really material right now.)
 
 This is useful, because now we can use our wrapper paradigm from earlier:
 
 ```go
+package main
+
+import (
+	"database/sql"
+	"net/http"
+	"strconv"
+
+	"golang.org/x/net/context"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
 const (
 	dbKey = "mydb" // don’t use a string here, but that’s another blog post…
 )
 
+func main() {
+	myDB, err := sql.Open("mysql", "mysql-dsn-goes-here")
+	if err != nil {
+		panic(err)
+	}
+	ctx := context.WithValue(context.Background(), dbKey, myDB)
+	http.Handle("/", wrapContext(ctx, handler))
+	// ListenAndServe, you know the rest
+}
+
 func handler(ctx context.Context, w http.ResponseWriter, r *http.Request) {
-	val, ok := ctx.Value(dbKey)
-	if !ok {
+	val := ctx.Value(dbKey)
+	if val == nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
@@ -130,7 +191,7 @@ func handler(ctx context.Context, w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
-	w.Write([]byte(strconv.Itoa(count+" gophers")))
+	w.Write([]byte(strconv.Itoa(count) + " gophers"))
 }
 
 func wrapContext(ctx context.Context, next func(ctx context.Context, w http.ResponseWriter, r *http.Request)) http.Handler {
@@ -139,15 +200,12 @@ func wrapContext(ctx context.Context, next func(ctx context.Context, w http.Resp
 	})
 }
 
-func main() {
-	db, err := sql.Open("mysql", "mysql-dsn-here")
-	if err != nil {
-		panic(err)
-	}
-	ctx := context.WithValue(context.Background(), dbKey, db)
-	http.Handle("/", wrapContext(ctx, handler))
-	// ListenAndServe, you know the rest.
+func getCount(db *sql.DB) (int, error) {
+	var count int
+	err := db.QueryRow("SELECT COUNT(*) FROM animals WHERE name=?", "gopher").Scan(&count)
+	return count, err
 }
+
 ```
 
 We reuse the idea of wrapping, but everything gets bundled in the `context.Context`, and pulled out of it from inside the `http.Handler`. Perfect! This is going great.
@@ -158,7 +216,7 @@ Unfortunately, we have a problem now. Our handler works fine, but if we want to 
 
 _Quick aside: if you’re not familiar with middleware, I recommend [this post](https://justinas.org/writing-http-middleware-in-go/) from Justinas Stankevičius._
 
-The thing about middleware is that the Go community has come to consider the http.Handler type sacred. If you’re not accepting and returning an http.Handler type in your middleware, it’s probably not getting very popular. Additionally, if you can’t use middleware that accepts and returns an http.Handler, you’re probably going to miss out on most the community-provided middleware available.
+The thing about middleware is that the Go community has come to consider the `http.Handler` type sacred. If you’re not accepting and returning an `http.Handler` type in your middleware, it’s probably not getting very popular. Additionally, if you can’t use middleware that accepts and returns an `http.Handler`, you’re probably going to miss out on most the community-provided middleware available.
 
 You’ll notice we’re returning an `http.Handler` above. So we _can_ use the community-provided middleware, but there’s a catch: we now have two types of middleware. The `http.Handler` interface accepts an `http.Handler` and returns an `http.Handler`, and doesn’t get to use any of the information in the `Context`. Then our internal middleware can accept our `Context` as part of its function signature (so `func(ctx context.Context, w http.ResponseWriter, r *http.Request)`) and gets to take advantage of the values within. The general structure is:
 
@@ -175,16 +233,34 @@ Except, wait, hang on. How are we going to inject those variables into the `*htt
 OK, time for another ugly wrapper:
 
 ```go
-func wrapContext(ctx context.Context, next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		r = r.WithContext(ctx)
-		next.ServeHTTP(w, r)
-	})
+package main
+
+import (
+	"context"
+	"database/sql"
+	"net/http"
+	"strconv"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
+const (
+	dbKey = "mydb" // don’t use a string here, but that’s another blog post…
+)
+
+func main() {
+	myDB, err := sql.Open("mysql", "mysql-dsn-goes-here")
+	if err != nil {
+		panic(err)
+	}
+	ctx := context.WithValue(context.Background(), dbKey, myDB)
+	http.Handle("/", wrapContext(ctx, handler))
+	// ListenAndServe, you know the rest
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	val, ok := request.Context().Value(dbKey)
-	if !ok {
+func handler(ctx context.Context, w http.ResponseWriter, r *http.Request) {
+	val := ctx.Value(dbKey)
+	if val == nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
@@ -198,17 +274,20 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
-	w.Write([]byte(strconv.Itoa(count+" gophers")))
+	w.Write([]byte(strconv.Itoa(count) + " gophers"))
 }
 
-func main() {
-	db, err := sql.Open("mysql", "mysql-dsn-here")
-	if err != nil {
-		panic(err)
-	}
-	ctx := context.WithValue(context.Background(), dbKey, db)
-	http.Handle("/", wrapContext(ctx, handler))
-	// ListenAndServe, you know the rest.
+func wrapContext(ctx context.Context, next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		r = r.WithContext(ctx)
+		next.ServeHTTP(w, r)
+	})
+}
+
+func getCount(db *sql.DB) (int, error) {
+	var count int
+	err := db.QueryRow("SELECT COUNT(*) FROM animals WHERE name=?", "gopher").Scan(&count)
+	return count, err
 }
 ```
 
@@ -218,7 +297,7 @@ But we’ve got a new problem. (_Of course_ we have a new problem.) Remember whe
 
 > For incoming server requests, the context is canceled when the ServeHTTP method returns.
 
-That’s a nice piece of the docs for [`*http.Request#Context()`](https://tip.golang.org/pkg/net/http/#Request.Context), and it’s basically telling us our `Context` will be canceled after every request. Which sounds fine, right? It is, when each `*http.Request` has its own `Context`. But our wrapper above is replacing each `*http.Request`’s `Context` with a copy of a _single_ `Context` type. And when a `Context` is canceled, the resources associated with it are released. So if we’re still using it… that sounds bad?
+That’s a nice piece of the docs for [`*http.Request#Context()`](https://tip.golang.org/pkg/net/http/#Request.Context), and it’s basically telling us our `Context` will be canceled after every request. Which sounds fine, right? It is, when each `*http.Request` has its own `Context`. But our wrapper above is replacing each `*http.Request`’s `Context` with a copy of a _shared_ `Context` instance. And when a `Context` is canceled, the resources associated with it are released. So if we’re still using it… that sounds bad?
 
 Oh, and also the docs say this about `Context`s:
 
@@ -253,11 +332,11 @@ So let’s address that first question. How important is it that your function m
 
 And this question, in itself, really has two parts: how important is it that the dependencies are clear, and how important is it that their _types_ are clear?
 
-That second one is the most clear-cut, objective downfall of `Context`s. The `key` and `value` you define in your `Context` are `interface{}` types, meaning we’re taking an escape hatch out of the type system, and the compiler washes its hands of us. It will not help us if we’re using the wrong types, we’ll just blow up at runtime. That’s, no matter who you ask, worse than blowing up when you try to build your package.
+That second one is the most clear-cut, objective downfall of `Context`s. The key and value you define in your `Context` are `interface{}` types, meaning we’re taking an escape hatch out of the type system, and the compiler washes its hands of us. It will not help us if we’re using the wrong types, we’ll just blow up at runtime. That is, no matter who you ask, worse than blowing up when you try to build your package.
 
 How important it is that your dependencies are clear is a harder question to talk about. There’s more nuance there, more squishy things it’s hard to measure and reason about.
 
-What we really boiled it down to, from what I can tell, is how approachable your code base is. And Peter is definitely more an expert on this than I am: he works more regularly with more people than I do.
+What we really boiled it down to, from what I can tell, is how approachable your code base is. And Peter is definitely more an expert on this than I am: he works with more people than I do.
 
 And I want to dig into this a bit, because it’s something I’ve been contemplating a lot recently at work. My codebases have a lot of ideas in them and patterns that I use, and once you understand them, the codebase is really easy to navigate and understand. But how do I surface that information to people new to the codebase?
 
@@ -269,9 +348,28 @@ It also makes it easier to modify the program. You only need to fill the functio
 
 So we’ve established that, all else equal, it’s better to explicitly list your dependencies as function params. But all else isn’t equal. We’ve spilled a lot of pixels already talking about why things aren’t equal. Can we retain the benefits we got from the `Context` but without the black hole approach to dependency injection?
 
-Peter’s first suggestion is to abuse the closures to inject the variable into a handler:
+Peter’s first suggestion is to abuse closures to inject the variable into a handler, like we did to wrap our `Context` before:
 
 ```go
+package main
+
+import (
+	"database/sql"
+	"net/http"
+	"strconv"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
+func main() {
+	myDB, err := sql.Open("mysql", "mysql-dsn-goes-here")
+	if err != nil {
+		panic(err)
+	}
+	http.Handle("/", handler(myDB))
+	// ListenAndServe, you know the rest
+}
+
 func handler(db *sql.DB) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		count, err := getCount(db)
@@ -279,28 +377,45 @@ func handler(db *sql.DB) http.Handler {
 			w.WriteHeader(http.StatusInternalServerError)
 			return
 		}
-		w.Write([]byte(strconv.Itoa(count+" gophers")))
+		w.Write([]byte(strconv.Itoa(count) + " gophers"))
 	})
 }
 
-func main() {
-	db, err := sql.Open("mysql", "mysql-dsn-here")
-	if err != nil {
-		panic(err)
-	}
-	http.Handle("/", handler(db))
-	// ListenAndServe, you know the rest.
+func getCount(db *sql.DB) (int, error) {
+	var count int
+	err := db.QueryRow("SELECT COUNT(*) FROM animals WHERE name=?", "gopher").Scan(&count)
+	return count, err
 }
+
 ```
 
 Here we’re using closures to inject the database connection into our handler function. This works, it fits the criteria above, but I find it annoying because (in my opinion) it obscures what the handler is actually doing, by hiding it amongst the tomfoolery to get the database connection injected into our scope.
 
-It also does not make the connection available to any of our middleware, but Peter has a solution for that:
+It also does not make the connection available to any of our middleware, but Peter has a solution for that: just inject the connection into the middleware.
 
 ```go
+package main
+
+import (
+	"database/sql"
+	"net/http"
+	"strconv"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
+func main() {
+	myDB, err := sql.Open("mysql", "mysql-dsn-goes-here")
+	if err != nil {
+		panic(err)
+	}
+	http.Handle("/", minGophers(myDB)(handler(myDB)))
+	// ListenAndServe, you know the rest
+}
+
 func minGophers(db *sql.DB) func(http.Handler) http.Handler {
 	return func(next http.Handler) http.Handler {
-		return http.HandlerFunc(w http.ResponseWriter, r *http.Request) {
+		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			// call our handler only if there are more than 5 gophers
 			count, err := getCount(db)
 			if err != nil {
@@ -317,13 +432,21 @@ func minGophers(db *sql.DB) func(http.Handler) http.Handler {
 	}
 }
 
-func main() {
-	db, err := sql.Open("mysql", "mysql-dsn-here")
-	if err != nil {
-		panic(err)
-	}
-	http.Handle("/", minGophers(db)(handler(db)))
-	// ListenAndServe, you know the rest.
+func handler(db *sql.DB) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		count, err := getCount(db)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+		w.Write([]byte(strconv.Itoa(count) + " gophers"))
+	})
+}
+
+func getCount(db *sql.DB) (int, error) {
+	var count int
+	err := db.QueryRow("SELECT COUNT(*) FROM animals WHERE name=?", "gopher").Scan(&count)
+	return count, err
 }
 ```
 
@@ -336,12 +459,32 @@ It works, but I don’t like it. It looks uncomfortably similar to a magic incan
 So, ok, we keep coming back to “I have more than one thing I need to be passing around”, but we can solve that. Let’s just bundle them up in a struct. Still type-safe, still easy to discover, no big deal:
 
 ```go
+package main
+
+import (
+	"database/sql"
+	"net/http"
+	"strconv"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
 type Deps struct {
 	Database *sql.DB
 	// also logging
 	// and metrics
 	// and service consumers
 	// whatever
+}
+
+func main() {
+	myDB, err := sql.Open("mysql", "mysql-dsn-goes-here")
+	if err != nil {
+		panic(err)
+	}
+	deps := Deps{Database: myDB}
+	http.Handle("/", minGophers(deps)(handler(deps)))
+	// ListenAndServe, you know the rest
 }
 
 func minGophers(deps Deps) func(http.Handler) http.Handler {
@@ -363,14 +506,21 @@ func minGophers(deps Deps) func(http.Handler) http.Handler {
 	}
 }
 
-func main() {
-	db, err := sql.Open("mysql", "mysql-dsn-here")
-	if err != nil {
-		panic(err)
-	}
-	deps := Deps{Database: db}
-	http.Handle("/", minGophers(deps)(handler(deps)))
-	// ListenAndServe, you know the rest.
+func handler(deps Deps) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		count, err := getCount(deps.Database)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+		w.Write([]byte(strconv.Itoa(count) + " gophers"))
+	})
+}
+
+func getCount(db *sql.DB) (int, error) {
+	var count int
+	err := db.QueryRow("SELECT COUNT(*) FROM animals WHERE name=?", "gopher").Scan(&count)
+	return count, err
 }
 ```
 
@@ -383,11 +533,32 @@ But wait, if we’re just including a struct as the first parameter of a functio
 Methods, I’ve been led to understand, are equivalent to a function with the receiver as the first parameter. So `func (a *MyType) Hello(world string)` is equivalent to `func Hello(a *MyType, world string)`. But–and this is important–the function signature doesn’t actually include the receiver. So `func (a *MyType) HandleFoo(w http.ResponseWriter, r *http.Request)` actually fills our `http.HandlerFunc` function signature. You can probably guess where I’m going with this.
 
 ```go
+package main
+
+import (
+	"database/sql"
+	"net/http"
+	"strconv"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
 type APIv1 struct {
 	Database *sql.DB
-	// your logging
-	// your metrics
-	// whatever your every-handler-uses-them dependencies are
+	// also logging
+	// and metrics
+	// and service consumers
+	// whatever
+}
+
+func main() {
+	myDB, err := sql.Open("mysql", "mysql-dsn-goes-here")
+	if err != nil {
+		panic(err)
+	}
+	apiv1 := APIv1{Database: myDB}
+	http.HandleFunc("/", apiv1.handler)
+	// ListenAndServe, you know the rest
 }
 
 func (a APIv1) handler(w http.ResponseWriter, r *http.Request) {
@@ -396,18 +567,15 @@ func (a APIv1) handler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
-	w.Write([]byte(strconv.Itoa(count+" gophers")))
+	w.Write([]byte(strconv.Itoa(count) + " gophers"))
 }
 
-func main() {
-	db, err := sql.Open("mysql", "mysql-dsn-here")
-	if err != nil {
-		panic(err)
-	}
-	apiv1 := APIv1{Database: db}
-	http.Handle("/", apiv1.handler)
-	// ListenAndServe, you know the rest.
+func getCount(db *sql.DB) (int, error) {
+	var count int
+	err := db.QueryRow("SELECT COUNT(*) FROM animals WHERE name=?", "gopher").Scan(&count)
+	return count, err
 }
+
 ```
 
 This is nice. This works well, our `http.Handle` call is clear as day, we can track the dependencies easily (you need an `APIv1` struct!), we have type safety, we can use middleware… everything is great.
@@ -416,7 +584,7 @@ This is nice. This works well, our `http.Handle` call is clear as day, we can tr
 
 There’s one last thing bugging me, and then I’ll be happy with Peter’s advice. To understand it, we need to talk about how I tend to structure projects.
 
-Each project usually gets, at the repo root, the business logic for my application. This means, basically, state management, and a few helpers around other common things. I then have a subpackage for each version of the API; you’ll see apiv1, apiv2, etc. That way, each binary can have multiple versions of the API running at once.
+Each project usually gets, at the repo root, the business logic for my application. This means, basically, state management, and a few helpers around other common things. I then have a subpackage for each version of the API; you’ll see `apiv1`, `apiv2`, etc. That way, each binary can have multiple versions of the API running at once.
 
 The reason this is important is because of that struct containing our dependencies. It begs the question: which package does that struct live in?
 
@@ -433,15 +601,51 @@ The tentative solution I’m playing with, but haven’t really done enough with
 Middleware is still an issue; developing shared middleware becomes tough, as we have no convenient way to make dependencies available in a type-safe way, and middleware can no longer opportunistically take advantage of any dependencies it can manage to detect, like we could with `context.Context`. But we _can_ agree to a few methods to expose the important stuff, and use interfaces to achieve type-safety and reusability in multiple projects:
 
 ```go
-type Databaser interface {
-	GetDatabase() *sql.DB
+package main
+
+import (
+	"database/sql"
+	"net/http"
+	"os"
+	"strconv"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
+type Dependencies struct {
+	Database *sql.DB
+	// also logging
+	// and metrics
+	// and service consumers
+	// whatever
 }
 
 func (d Dependencies) GetDatabase() *sql.DB {
 	return d.Database
 }
 
-func dbWrapper(d Databaser, next http.Handler) http.Handler {
+// this would be in the apiv1 package, but for illustration purposes…
+type APIv1 struct {
+	Dependencies
+	// any APIv1-specific dependencies
+}
+
+type Databaser interface {
+	GetDatabase() *sql.DB
+}
+
+func main() {
+	myDB, err := sql.Open("mysql", "mysql-dsn-goes-here")
+	if err != nil {
+		panic(err)
+	}
+	coreDeps := Dependencies{Database: myDB}
+	apiv1 := APIv1{Dependencies: coreDeps}
+	http.Handle("/", minGophersMiddleware(coreDeps, http.HandlerFunc(apiv1.handler)))
+	// ListenAndServe, you know the rest
+}
+
+func minGophersMiddleware(d Databaser, next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// call our handler only if there are more than 5 gophers
 		db := d.GetDatabase()
@@ -459,22 +663,117 @@ func dbWrapper(d Databaser, next http.Handler) http.Handler {
 	})
 }
 
-func main() {
-	db, err := sql.Open("mysql", "mysql-dsn-here")
+func (a APIv1) handler(w http.ResponseWriter, r *http.Request) {
+	count, err := getCount(a.Database)
 	if err != nil {
-		panic(err)
+		w.WriteHeader(http.StatusInternalServerError)
+		return
 	}
-	deps := Dependencies{Database: db}
-	apiv1 := APIv1{Dependencies: deps}
-	http.Handle("/", dbWrapper(deps, api.handler))
-	// ListenAndServe, you know the rest
+	w.Write([]byte(strconv.Itoa(count) + " gophers"))
 }
+
+func getCount(db *sql.DB) (int, error) {
+	var count int
+	err := db.QueryRow("SELECT COUNT(*) FROM animals WHERE name=?", "gopher").Scan(&count)
+	return count, err
+}
+
 ```
 
 It’s still doesn’t hide the cruft as nicely as the `context` solution did, but I think hiding the cruft was a good portion of the objection to it, in the first place. We’re less interested in hiding it here than we are in managing it, and making sure it doesn’t overpower and obscure, but is still easily discoverable. This is about tidying things up, not magicking them away.
+
+That `http.Handle` line still looks pretty gnarly; a good solution may be to (as I prefer to) have all the muxing for a specific API version handled in its package, then just send requests based on their prefix to that version’s router. If we do that, we can define it in a `ServeHTTP` method on the `APIv1` type, which means we don't need to cast to `http.HandlerFunc` in the `http.Handle` line, cleaning it up a bit:
+
+```go
+package main
+
+import (
+	"database/sql"
+	"net/http"
+	"strconv"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
+type Dependencies struct {
+	Database *sql.DB
+	// also logging
+	// and metrics
+	// and service consumers
+	// whatever
+}
+
+func (d Dependencies) GetDatabase() *sql.DB {
+	return d.Database
+}
+
+type APIv1 struct {
+	Dependencies
+	// any APIv1-specific dependencies
+}
+
+type Databaser interface {
+	GetDatabase() *sql.DB
+}
+
+func main() {
+	myDB, err := sql.Open("mysql", "mysql-dsn-goes-here")
+	if err != nil {
+		panic(err)
+	}
+	coreDeps := Dependencies{Database: myDB}
+	apiv1 := APIv1{Dependencies: coreDeps}
+	http.Handle("/v1", apiv1)
+	// ListenAndServe, you know the rest
+}
+
+func minGophersMiddleware(d Databaser, next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		// call our handler only if there are more than 5 gophers
+		db := d.GetDatabase()
+		count, err := getCount(db)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+		if count < 5 {
+			w.WriteHeader(http.StatusBadRequest)
+			w.Write([]byte("Error: not enough gophers"))
+			return
+		}
+		next.ServeHTTP(w, r)
+	})
+}
+
+func (a APIv1) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	// use a router package here
+	// in this example we’re just gonna respond with the same
+	// handler to every request
+	minGophersMiddleware(a.Dependencies, http.HandlerFunc(a.handler)).ServeHTTP(w, r)
+}
+
+func (a APIv1) handler(w http.ResponseWriter, r *http.Request) {
+	count, err := getCount(a.Database)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+	w.Write([]byte(strconv.Itoa(count) + " gophers"))
+}
+
+func getCount(db *sql.DB) (int, error) {
+	var count int
+	err := db.QueryRow("SELECT COUNT(*) FROM animals WHERE name=?", "gopher").Scan(&count)
+	return count, err
+}
+```
+
+That `ServeHTTP` function looks a bit gnarly, but it looks much better if you use a router package.
 
 ## Can We Do Better?
 
 This is where I am in my dependency injection story, at the moment. I’m interested in knowing where you all are. If you have a way you like better, or see a flaw in my approach, let me know. Hit me up on [Twitter](https://twitter.com/paddyforan), or ping me on the [Gophers Slack](https://bit.ly/go-slack-signup) (my username there is paddy).
 
 Thanks to Peter for talking through a lot of this with me and sharing his best practices.
+
+Extra big thank you to [Margaret Staples](https://deadlugosi.blogspot.com) and [Chris Agocs](https://agocs.org) for giving me feedback and thoughts on earlier drafts of this post.
