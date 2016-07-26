@@ -1,10 +1,8 @@
 +++
 date = "2016-07-25T18:31:27-07:00"
-has_tweet = true 
-summary = "A brief summary of this post."
+summary = "An examination of different dependency injection strategies in Go."
 title = "Contexts & Dependency Injection"
 url = "/posts/contexts-and-dependency-injection"
-draft = false
 +++
 
 Just before GopherCon, Peter Bourgon was tweeting about contexts and dependency injection. For background, Peter is someone whose best practices have rung true or been proven over time since he started talking about them (to my knowledge) at the first GopherCon. So when he [said](https://twitter.com/peterbourgon/status/752022730812317696) not to use [contexts](https://golang.org/x/net/context) as a way to manage dependency injection, I was pretty sad. That’s typically how I handle dependency injection.
