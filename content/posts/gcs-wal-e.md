@@ -52,4 +52,4 @@ And to make things even more fun, it’s unclear whether the Google provider for
 
 So that’s where I’m standing now: trying to decide between a library that doesn’t quite match the tool I’m plugging it into, which doesn’t support a nice-to-have feature; or a library that matches the tool I’m plugging it into, supports all the features, but requires me to dig deep and understand a pretty-undocumented-but-rather-important class in an a different library, feels hacky, and may be unsupported in the future.
 
-If any of y’all reading this are `boto` experts or know something I don’t, hitting me up on [Twitter](https://twitter.com/paddyforan) or [email](mailto:paddy+wale@paddy.io) would be appreciated.
+If any of y’all reading this are `boto` experts or know something I don’t, hitting me up on [Twitter](https://twitter.com/paddycarver) or [email](mailto:paddy+wale@paddy.io) would be appreciated.

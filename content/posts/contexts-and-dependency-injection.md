@@ -770,7 +770,7 @@ That `ServeHTTP` function looks a bit gnarly, but it looks much better if you us
 
 ## Can We Do Better?
 
-This is where I am in my dependency injection story, at the moment. I’m interested in knowing where you all are. If you have a way you like better, or see a flaw in my approach, let me know. Hit me up on [Twitter](https://twitter.com/paddyforan), or ping me on the [Gophers Slack](https://bit.ly/go-slack-signup) (my username there is paddy).
+This is where I am in my dependency injection story, at the moment. I’m interested in knowing where you all are. If you have a way you like better, or see a flaw in my approach, let me know. Hit me up on [Twitter](https://twitter.com/paddycarver), or ping me on the [Gophers Slack](https://bit.ly/go-slack-signup) (my username there is paddy).
 
 Thanks to Peter for talking through a lot of this with me and sharing his best practices.
 

@@ -59,7 +59,7 @@ We’re currently examining in the area of Puyallup, somewhere on the Olympic pe
 
 We have figured out we don’t want to live on the eastern side of Mount Rainier National Park, which is sad. That’s where &yet is, but that’s also quite a drive from the Seattle-Tacoma International Airport, which we’d like to be relatively close to, because it’s the cheapest way to fly across the country, and I get the feeling we’ll be doing that with some regularity.
 
-Other than that, though, we’re open to suggestions. Feel free to [shoot me an email](mailto:paddy@paddy.io?subject=I%20know%20where%20you%20should%20live) or [ping me on Twitter](https://twitter.com/paddyforan) if you have a suggestion on where we should move.
+Other than that, though, we’re open to suggestions. Feel free to [shoot me an email](mailto:paddy@paddy.io?subject=I%20know%20where%20you%20should%20live) or [ping me on Twitter](https://twitter.com/paddycarver) if you have a suggestion on where we should move.
 
 ## Getting Scared About the Weather
 

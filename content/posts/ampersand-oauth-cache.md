@@ -240,4 +240,4 @@ But the simplicity of the code is _the point_ of this post. Ampersand’s event 
 
 And if you stick around for the next post in the series, we’re going to leverage this into truly mind-bending levels of “don’t make me think”.
 
-If you want, for some reason, a running version of this code (along with a transpiler to build it so it functions in your browser), I put it all in a [Github repository](https://github.com/paddyforan/ampersand-oauth-cache). Because the only thing funnier than writing a big long blog post about 40 lines of code is putting it in a Github repo and slapping a license and README on it.
+If you want, for some reason, a running version of this code (along with a transpiler to build it so it functions in your browser), I put it all in a [Github repository](https://github.com/paddycarver/ampersand-oauth-cache). Because the only thing funnier than writing a big long blog post about 40 lines of code is putting it in a Github repo and slapping a license and README on it.

@@ -19,7 +19,7 @@ Your client should be part of the pitch because I don’t work with technologies
 
 ## Know Something About Me
 
-I [speak](/talks) frequently. I [tweet](https://twitter.com/paddyforan) constantly. I [blog](/posts) occasionally. I dominate the first few pages of Google search results for my name. I’m not saying you need to know everything about me, but c’mon, at least know when your job is obviously not a good fit. If you try to pitch me a Ruby job, there’s a 100% chance I’m hitting the “Mark As Spam” button before I even finish reading your pitch, because you obviously did absolutely no research. If you try to pitch me a job that has a degree as a minimum requirement, I’m going to snarkily ask if you’re going to give me the degree, too. C’mon.
+I [speak](/talks) frequently. I [tweet](https://twitter.com/paddycarver) constantly. I [blog](/posts) occasionally. I dominate the first few pages of Google search results for my name. I’m not saying you need to know everything about me, but c’mon, at least know when your job is obviously not a good fit. If you try to pitch me a Ruby job, there’s a 100% chance I’m hitting the “Mark As Spam” button before I even finish reading your pitch, because you obviously did absolutely no research. If you try to pitch me a job that has a degree as a minimum requirement, I’m going to snarkily ask if you’re going to give me the degree, too. C’mon.
 
 Yes, it takes time to do research, but it’s a competitive market, and I am not being paid to respond to recruiters. You are being paid to contact me. Clearly, one of us should have the responsibility for determining if this is a good fit, and it’s probably not me.
 

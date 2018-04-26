@@ -60,4 +60,4 @@ It’s also important to remember that this won’t actually raise all the probl
 
 This is what I’ve come up with. This is what I’m basing my efforts on right now. But there has to be more. There have to be ideas and tools and strategies besides this to measure platforms and products for pain points when specifically applied to developers.
 
-What am I missing? Tweet me at [@paddyforan](http://twitter.com/paddyforan) or hit me up on [Google+](http://profiles.google.com/foran.paddy) or, hell, email me at [foran.paddy@gmail.com](mailto:foran.paddy@gmail.com) and let’s talk about it.
+What am I missing? Tweet me at [@paddycarver](http://twitter.com/paddycarver) or hit me up on [Google+](http://profiles.google.com/foran.paddy) or, hell, email me at [foran.paddy@gmail.com](mailto:foran.paddy@gmail.com) and let’s talk about it.

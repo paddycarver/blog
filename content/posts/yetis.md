@@ -31,6 +31,6 @@ Sometimes it’s hard to explain, because I don’t stop loving people when they
 
 In many ways, &yet is what I think of when I say “[we can do better]({{< relref "posts/better.md" >}})”.
 
-I [claimed](https://twitter.com/paddyforan/status/586292905704325120) today that you can tell how my day went based on how I react to &yet. Sometimes, it’s a pick-me-up to remember that a group of people like that can exist and work together. Sometimes, it’s a warm fuzzy feeling of remembering that people I respect and like _like me, too_. Sometimes, it makes me sad and despondent, because the vibe of positivity and creativity and trying to do better is so far removed from my own reality that day.
+I [claimed](https://twitter.com/paddycarver/status/586292905704325120) today that you can tell how my day went based on how I react to &yet. Sometimes, it’s a pick-me-up to remember that a group of people like that can exist and work together. Sometimes, it’s a warm fuzzy feeling of remembering that people I respect and like _like me, too_. Sometimes, it makes me sad and despondent, because the vibe of positivity and creativity and trying to do better is so far removed from my own reality that day.
 
 But I’m always happy to have &yet in my life. So here’s to the yetis.

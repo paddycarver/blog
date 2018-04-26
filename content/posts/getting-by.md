@@ -34,7 +34,7 @@ I thought about all the people who were in my position, but not fortunate enough
 
 I put a call out in late May, looking for people in tech with a mental illness.
 
-<blockquote class="twitter-tweet tw-align-center"><p>Are you a tech person? Do you struggle with mental illness? I’d like to talk to you. foran.paddy at gmail.</p>— Paddy Foran (@paddyforan) <a href="https://twitter.com/paddyforan/statuses/337476040245010432">May 23, 2013</a></blockquote>
+<blockquote class="twitter-tweet tw-align-center"><p>Are you a tech person? Do you struggle with mental illness? I’d like to talk to you. foran.paddy at gmail.</p>— Paddy Foran (@paddycarver) <a href="https://twitter.com/paddycarver/statuses/337476040245010432">May 23, 2013</a></blockquote>
 
 I got a few responses. I started talking to them about my crazy plan. I wanted to get a bunch of people with mental illnesses to write about their experiences and share their perspectives. The point wasn’t to prove anything or garner sympathy; if I wanted anything, it was awareness about how widespread an issue it is. But the real goal, the real motivation, was to let people who were in my position—unsure about their illness and what it meant, feeling like a fraud—to get more information and get reinforcement from others.
 
@@ -42,7 +42,7 @@ There was some tweaking to my idea, and a lot of support. Then things got busy, 
 
 In August, I put out another call.
 
-<blockquote class="twitter-tweet tw-align-center"><p>Putting another call out: do you have a mental illness and work in tech? Will you talk to me about it? @ me or mail foran.paddy@gmail.com</p>— Paddy Foran (@paddyforan) <a href="https://twitter.com/paddyforan/statuses/366652086055743488">August 11, 2013</a></blockquote>
+<blockquote class="twitter-tweet tw-align-center"><p>Putting another call out: do you have a mental illness and work in tech? Will you talk to me about it? @ me or mail foran.paddy@gmail.com</p>— Paddy (@paddycarver) <a href="https://twitter.com/paddycarver/statuses/366652086055743488">August 11, 2013</a></blockquote>
 
 This time, I got a huge response. Dozens of people came forward, interested in telling their story and sharing their perspective. I started the long process of emailing them all and obtaining responses that would fit the format I had in mind.
 

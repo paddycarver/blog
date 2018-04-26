@@ -19,8 +19,8 @@ I want to help you start a conversation about mental health. Please reach out if
 
 Contact info:
 
-* Email: paddy@paddy.io
-* Twitter: @paddyforan
+* Email: paddy@carvers.co
+* Twitter: @paddycarver
 
 About me:
 

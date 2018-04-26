@@ -19,7 +19,7 @@ So when you disagree with me, just accept that someone may have a differing view
 
 I don’t speak for everyone with depression, any more than I speak for anyone that writes software or anyone battling the flu. But I speak for me.
 
-I’ve largely held off on writing about Aaron. I say that, having [tweeted](https://twitter.com/paddyforan/status/290134983476133888) [relentlessly](https://twitter.com/paddyforan/status/290179606592507906) [about](https://twitter.com/paddyforan/status/290095484218003456) [it](https://twitter.com/paddyforan/status/290133941770412032), [posting on Facebook about it](https://www.facebook.com/paddyforan/posts/461593037235613), and even going so far [as writing on Tumblr](http://thoughts.paddy.io/post/40358983883/its-a-bad-week-to-be-young-and-brilliant-and-good) about it. But for all the sharing I did about it, all the visible signs that it had hit me hard… they were a filtered set, a small sampling. It, and the sudden death of a friend from high school a week earlier, hung over me for longer than it should have, and creeped into every corner of my life.
+I’ve largely held off on writing about Aaron. I say that, having [tweeted](https://twitter.com/paddycarver/status/290134983476133888) [relentlessly](https://twitter.com/paddycarver/status/290179606592507906) [about](https://twitter.com/paddycarver/status/290095484218003456) [it](https://twitter.com/paddycarver/status/290133941770412032), [posting on Facebook about it](https://www.facebook.com/paddycarver/posts/461593037235613), and even going so far [as writing on Tumblr](http://thoughts.paddy.io/post/40358983883/its-a-bad-week-to-be-young-and-brilliant-and-good) about it. But for all the sharing I did about it, all the visible signs that it had hit me hard… they were a filtered set, a small sampling. It, and the sudden death of a friend from high school a week earlier, hung over me for longer than it should have, and creeped into every corner of my life.
 
 Had you told me Aaron’s name at the start of the year, I wouldn’t have known who he was. I was, as so many were, introduced to Aaron posthumously. And yet, I felt his death as accutely as I felt the death of someone I had grown up with. Someone I had known for years, someone who was a constant character in the story of my life.
 
@@ -37,9 +37,9 @@ This post is about you.
 
 Because I was very, very angry with you. I was angry with you because you were ignorant.
 
-You [said](https://www.facebook.com/paddyforan/posts/461593037235613?comment_id=4390865) that Aaron somehow didn’t know how loved he was, that he was somehow blind to how much others cared for him. That he couldn’t have known, because if he had, he wouldn’t have taken his own life.
+You [said](https://www.facebook.com/paddycarver/posts/461593037235613?comment_id=4390865) that Aaron somehow didn’t know how loved he was, that he was somehow blind to how much others cared for him. That he couldn’t have known, because if he had, he wouldn’t have taken his own life.
 
-You [tried to help](https://twitter.com/paddyforan/status/290208410958454784), but fell into the same traps that those you’re trying to instruct fall into. You presumed to know about something you can’t possibly know about.
+You [tried to help](https://twitter.com/paddycarver/status/290208410958454784), but fell into the same traps that those you’re trying to instruct fall into. You presumed to know about something you can’t possibly know about.
 
 You [equated suicide to taking your ball and going home](http://www.codinghorror.com/blog/2013/01/the-end-of-ragequitting.html), and apparently didn’t read what you had written before you posted it. If you had, you would surely have realised that it was obscenely and offensively dismissive of the feelings of someone who is ruled by their feelings. You would have obviously realised that you do not, in fact, “understand that depression is a serious disease that can fell any person, however strong”. Because you don’t understand, if you can honestly equate killing yourself to quitting a goddamn game.
 
@@ -53,7 +53,7 @@ So let me tell you a little about me, and if one day I end up losing the fight, 
 
 The first thing I’m going to tell you is that my depression is not about being *sad*. It is about feeling *tired*. Not the tired you feel when you’ve been up coding for 48 hours and things are starting to blur and you’re no longer thinking coherently and you’re prone to babble amusing things to anyone who will listen. It’s the kind of tired you feel when you wake up in the morning, knowing you have a bad day at a job you hate ahead of you, and looking forward to getting it over and coming home. Except in my case, I don’t get to come home. It starts when I wake up, and ends when I go to sleep.
 
-So I distract myself. I throw myself, unhealthily, into work. I [make things](http://www.secondbit.org) and [talk to people](https://twitter.com/paddyforan) and [reach for things above my age or education or experience](http://www.iron.io/about). Much for the same reason you read that funny comic at work, or focus on the fact that you’re wearing your favourite t-shirt, or relish the sandwich you eat that day.
+So I distract myself. I throw myself, unhealthily, into work. I [make things](http://www.secondbit.org) and [talk to people](https://twitter.com/paddycarver) and [reach for things above my age or education or experience](http://www.iron.io/about). Much for the same reason you read that funny comic at work, or focus on the fact that you’re wearing your favourite t-shirt, or relish the sandwich you eat that day.
 
 Because it’s better than focusing on the crushing feeling of being at the job you hate.
 

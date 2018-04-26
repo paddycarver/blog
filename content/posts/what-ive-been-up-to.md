@@ -9,7 +9,7 @@ OK, so I haven’t written here in a _little_ while. Not nearly as long as some 
 
 First of all, I started with [Yet Another Blog](http://www.suchagit.com/ "I seem to accumulate these at an alarming pace..."). This one is going to be mainly active this summer, and then periodically over the next school year—or that’s the plan, anyways. It details my adventures as a Googler In Training (which is a wonderful title I’ve made up for myself; it basically just means I want to work for Google really badly, and am trying to hone my skills so I can). I’ll be learning C/C++ over the summer, and enhancing my skills with Java. I’ll also be looking into learning data structures and algorithms.
 
-If any of you readers know about these kinds of things and would like to teach me even a little bit, drop me a line in the comments, or @ me (@paddyforan) on Twitter. I’ll need all the help I can get.
+If any of you readers know about these kinds of things and would like to teach me even a little bit, drop me a line in the comments, or @ me (@paddycarver) on Twitter. I’ll need all the help I can get.
 
 Besides my over-publicised attempt to get hired at the _greatest company on Earth_, I’ve been busy with finals. But those aren’t nearly as exciting, so I’m just going to skip right over that part.
 
@@ -17,7 +17,7 @@ I’m working on a QR-based ticket site written in Java for App Engine, basicall
 
 Again, just a really simple ticketing system for lightweight events. Also working on a way to integrate “on-site” or “at the door” tickets with the system. Think I’ve got it figured out.
 
-I may release that project as open source. Probably will, just because [that’s how I roll]({{< relref "posts/a-return-to-my-roots.md" >}} "Self-referencing. I’m so COOL."). Look for it on [Github](http://www.github.com/paddyforan "Oh my god, a link I haven’t linked to before."), or I’ll write a post here when it’s ready to actually, y’know, be used.
+I may release that project as open source. Probably will, just because [that’s how I roll]({{< relref "posts/a-return-to-my-roots.md" >}} "Self-referencing. I’m so COOL."). Look for it on [Github](http://www.github.com/paddycarver "Oh my god, a link I haven’t linked to before."), or I’ll write a post here when it’s ready to actually, y’know, be used.
 
 So there you have it. That’s what I’ve been up to, besides my normal hacking on @spaz and mundane college stuff. Oh, and super-secret Google stuff I’m not allowed to tell anyone about. Like, laws and such. Which makes me feel all warm and fuzzy.
 

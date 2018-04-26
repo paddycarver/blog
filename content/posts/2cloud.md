@@ -58,12 +58,12 @@ starting to notice a trend here. It was March of 2009. I was working on a person
 project, something to keep me busy, that was built on App Engine. I wanted to use 
 XMPP, which wasn't supported yet. It came up in a tweet.
 
-<blockquote class="twitter-tweet tw-align-center"><p>@<a href="https://twitter.com/jasonsalas">jasonsalas</a>: Thanks! I'm in the US. But I was looking into XMPP support for <a href="https://twitter.com/search/%2523appengine">#appengine</a>- it's coming, but for now I have to use IMified.</p>— Paddy Foran (@paddyforan) <a href="https://twitter.com/paddyforan/status/1303818629" data-datetime="2009-03-10T03:26:55+00:00">March 10, 2009</a></blockquote>
+<blockquote class="twitter-tweet tw-align-center"><p>@<a href="https://twitter.com/jasonsalas">jasonsalas</a>: Thanks! I'm in the US. But I was looking into XMPP support for <a href="https://twitter.com/search/%2523appengine">#appengine</a>- it's coming, but for now I have to use IMified.</p>— Paddy (@paddycarver) <a href="https://twitter.com/paddycarver/status/1303818629" data-datetime="2009-03-10T03:26:55+00:00">March 10, 2009</a></blockquote>
 
 For some reason, I somehow came to the attention of Mike Repass, the project manager 
 for the App Engine XMPP API. I still have no idea how this happened.
 
-<blockquote class="twitter-tweet tw-align-center" data-in-reply-to="1303818629"><p>@<a href="https://twitter.com/paddyforan">paddyforan</a> Hi Paddy, would love to get your input on what you'd like to see with XMPP in App engine, drop me a line!</p>— Mike Repass (@mdrcode) <a href="https://twitter.com/mdrcode/status/1304888141" data-datetime="2009-03-10T11:08:07+00:00">March 10, 2009</a></blockquote>
+<blockquote class="twitter-tweet tw-align-center" data-in-reply-to="1303818629"><p>@<a href="https://twitter.com/paddycarver">paddycarver</a> Hi Paddy, would love to get your input on what you'd like to see with XMPP in App engine, drop me a line!</p>— Mike Repass (@mdrcode) <a href="https://twitter.com/mdrcode/status/1304888141" data-datetime="2009-03-10T11:08:07+00:00">March 10, 2009</a></blockquote>
 
 Mike Repass then put me in touch with Michael, the engineer working on the API. Michael 
 and I exchanged a few emails, discussing the API.

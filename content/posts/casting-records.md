@@ -24,7 +24,7 @@ Well, friend, fortunately for you, I already went through the pain of figuring t
 
 ## What You’ll Need
 
-You’re gonna need a Linux box. It needs a microphone input. You’ll also want speakers for it, for testing. You can find them for like $15 [on Amazon](http://smile.amazon.com/dp/B00GHY5F3K). A Raspberry Pi could work, if you get a USB adapter to give it a mic input. I haven’t tried it yet, it may be underpowered and your performance could suffer. No idea, really. Someone not-me try it and [tell me about it](https://twitter.com/paddyforan).
+You’re gonna need a Linux box. It needs a microphone input. You’ll also want speakers for it, for testing. You can find them for like $15 [on Amazon](http://smile.amazon.com/dp/B00GHY5F3K). A Raspberry Pi could work, if you get a USB adapter to give it a mic input. I haven’t tried it yet, it may be underpowered and your performance could suffer. No idea, really. Someone not-me try it and [tell me about it](https://twitter.com/paddycarver).
 
 You’re going to need a record player, or whatever it is you want to send music from. Important thing is that it needs to be able to plug into that mic input on your Linux box. For me, this involved an RCA-to-3.55mm adapter. It cost like $5.
 

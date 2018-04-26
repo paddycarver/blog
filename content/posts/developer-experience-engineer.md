@@ -63,7 +63,7 @@ others for this job, as I think they explain things a lot better than I can:
   nothing less than the best assistance I can offer you. Sometimes that may 
   not be enough. That’s regrettable, but inevitable. I’m a limited human 
   with limited time. My inbox will always have room for developers who need 
-  help, I will always do my best to respond on [Twitter](http://twitter.com/paddyforan) 
+  help, I will always do my best to respond on [Twitter](http://twitter.com/paddycarver) 
   or [Google+](http://profiles.google.com/foran.paddy), and I will do my best 
   to ensure that no question is met with silence in Iron.io’s [public support 
   chat room](http://get.iron.io/chat). I can’t build a better developer 

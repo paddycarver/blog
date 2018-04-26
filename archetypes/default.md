@@ -1,7 +1,10 @@
 +++
 summary = "A brief summary of this post."
-url = "/posts/my-post"
+url = "/posts/{{ .TranslationBaseName }}"
+title = "{{ replace .TranslationBaseName "-" " " | title }}"
+date = {{ .Date }}
 has_tweet = false
+draft = true
 
 [quote]
 attr = "Person who said it"
