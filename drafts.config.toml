@@ -1,6 +1,6 @@
 baseurl = "https://drafts.paddy.io"
 pygmentsuseclasses = true
-publishDir = "/home/paddy/go/src/github.com/carvers/infra/nginx/html/drafts.paddy.io"
+publishDir = "/home/paddy/projects/infra/files/html/drafts.paddy.io"
 buildDrafts = true
 
 [params]

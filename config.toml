@@ -1,6 +1,6 @@
 baseurl = "https://paddy.io"
 pygmentsuseclasses = true
-publishDir = "/home/paddy/go/src/github.com/carvers/infra/nginx/html/paddy.io"
+publishDir = "/home/paddy/projects/infra/files/html/paddy.io"
 
 [params]
 description = "The personal site of Paddy, an impractical zealot known to tilt at windmills."
