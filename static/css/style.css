@@ -482,7 +482,7 @@ footer#colophon {
 #page {
 	height: 100vh;
 	background-size: cover;
-	background-position: 100% 50%;
+	background-position: top center;
 	transition: background-image .5s linear;
 }
 
