@@ -135,7 +135,7 @@ In the worst case scenario, when nobody around you is suffering—which is unlik
 
 That’s a pretty good worst case scenario.
 
-Thank you so much for your time. We’re almost done. If you have any questions, feel free to approach me and ask. If you’d rather, feel free to [email me](mailto:paddy@paddy.io).
+Thank you so much for your time. We’re almost done. If you have any questions, feel free to approach me and ask. If you’d rather, feel free to [email me](mailto:paddy@carvers.co).
 
 And if you’re suffering, just know that some stupid software engineer living in Brooklyn loves you, even if you’re having trouble loving yourself right now.
 
