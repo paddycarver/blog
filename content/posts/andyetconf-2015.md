@@ -22,11 +22,11 @@ Instead we talked about how identities form online, and the part we (as creators
 
 Day two continued our conversations, including a _fantastic_ talk about being more than one thing by the very excellent [Lynn Fisher](http://lynnandtonic.com).
 
-{{< bigimage title="intersections" src="/img/posts/andyetconf-2015/intersections.jpg" >}}
+{{< bigimage title="intersections" src="/img/posts/andyetconf-2015/intersections.webp" >}}
 
 But when lunch came around, the talks seemed a world away. We were put on buses, given sealed envelopes, and told to open them when the bus left. The letters would tell us where we were going.
 
-{{< bigimage title="letter" src="/img/posts/andyetconf-2015/letter.jpg" >}}
+{{< bigimage title="letter" src="/img/posts/andyetconf-2015/letter.webp" >}}
 
 We were going to Richland’s [B Reactor](http://www.hanford.gov/page.cfm/BReactor), the world’s first full-scale plutonium production reactor. Our envelope contained the above-excerpted letter, a copy of Einstein’s letter to President Franklin Roosevelt discussing the creation of the Manhattan project, and information about the site and the tour we were about to go on.
 
@@ -34,7 +34,7 @@ It’s impossible to describe the feeling of sitting on that bus, surrounded by 
 
 The uncomfortable feeling only grew more pronounced as the tour guide talked more about the engineering accomplishment, the “great science”, and our “triumph”. The discrepancy between how we felt and how the tour guide felt was palpable, and the tension did not go unnoticed.
 
-{{< bigimage title="B Reactor" src="/img/posts/andyetconf-2015/breactor.jpg" >}}
+{{< bigimage title="B Reactor" src="/img/posts/andyetconf-2015/breactor.webp" >}}
 
 When we returned to our venue, we held an open discussion of how the trip made us feel and what we were thinking. We talked about remorse and attitude, we talked about how the Japanese felt. We talked about nuclear power, and we talked about local heritage. We talked about celebrating technological achievement, and we talked about how what that technology is used for fits into its value.
 
