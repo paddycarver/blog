@@ -1,9 +1,6 @@
 {{ partial "header.html" . }}
 
 <article>
-{{ if .Params.img }}{{ $.Scratch.Add "bannerImg" "/img/posts/" }}{{ $.Scratch.Add "bannerImg" .Params.img.file }}<img src="{{ $.Scratch.Get "bannerImg" }}" class="cover-image" />
-{{ if.Params.img.title }}<p class="cover-image-attribution">{{ if .Params.img.title }}{{ if .Params.img.link }}<a href="{{ .Params.img.link }}" title="{{ .Params.img.title }}">{{ end }}<em>{{ .Params.img.title }}</em>{{ if .Params.img.link }}</a>{{ end }}{{ else }}Cover image{{ end }} by {{ .Params.img.attr }}</p>{{ end }}
-{{ end }}
 <header class="entry-header">
 <h1 class="entry-title">{{ .Title }}</h1>
 
