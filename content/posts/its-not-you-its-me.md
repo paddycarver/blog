@@ -27,7 +27,7 @@ But the scales have finally tipped, and it’s become a net negative in my life.
 
 In the meantime, I might end up blogging more frequently here. Subscribe if you haven’t and you want to stay up to speed.
 
-I’ve also decided I am going to, at long last, start working on Tangles, a blogging project I’ve wanted to get going for, quite literally, years now. It will be running at [tangles.paddy.io](http://tangles.paddy.io) and will eventually become this blog, once I get the software to a stable enough state. I’ll post updates here if I get it going in the next month, but no promises.
+I’ve also decided I am going to, at long last, start working on Tangles, a blogging project I’ve wanted to get going for, quite literally, years now. It will be running at [tangles.paddy.carvers.co](http://tangles.paddy.carvers.co) and will eventually become this blog, once I get the software to a stable enough state. I’ll post updates here if I get it going in the next month, but no promises.
 
 I’m planning to implement the blocks and uninstalls when I wake up July 1st. Make sure we swap contact information by then.
 

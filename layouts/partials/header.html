@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ if .Title }}{{ .Title }}{{ else }}Tilting at Windmills{{ end }}</title>
-    <meta property="og:title" content="paddy.io: {{ if .Title }}{{ .Title }}{{ else }}Open Web Cheerleader{{ end }}" />
-    <meta itemprop="name" content="paddy.io: {{ if .Title }}{{ .Title }}{{ else }}Open Web Cheerleader{{ end }}" />
+    <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}Open Web Cheerleader{{ end }}" />
+    <meta itemprop="name" content="{{ if .Title }}{{ .Title }}{{ else }}Open Web Cheerleader{{ end }}" />
     <meta property="og:type" content="blog" />
     <meta property="og:url" content="{{ .URL | absURL }}" />
     <meta property="og:image" content="{{ "/img/paddy.jpg" | absURL }}" />
     <meta itemprop="image" content="{{ "/img/paddy.jpg" | absURL }}">
-    <meta property="og:site_name" content="paddy.io" />
+    <meta property="og:site_name" content="Paddy Carver" />
     <meta property="og:description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ end }}" />
     <meta itemprop="description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ end }}">
     <meta property="fb:admins" content="1274456118" />
+		<meta name="msapplication-TileColor" content="#57b680">
+		<meta name="theme-color" content="#57b680">
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,700">
     <link rel="stylesheet" type="text/css" href="{{ "/css/syntax.css" | absURL }}" />
     <link rel="stylesheet" href="{{ "/css/style.css" | absURL }}" />
-    <link rel="alternate" type="application/rss+xml" title="paddy.io{{ if .Section }}: {{ .Section }}{{ end }}" href="{{ if .Section }}{{ $.Scratch.Add "sectionRSS" "/" }}{{ $.Scratch.Add "sectionRSS" .Section }}{{ $.Scratch.Add "sectionRSS" "/index.xml" }}{{ $.Scratch.Get "sectionRSS" | absURL }}{{ else }}{{ .Site.RSSLink }}{{ end }}" />
+    <link rel="alternate" type="application/rss+xml" title="Paddy Carver{{ if .Section }}: {{ .Section }}{{ end }}" href="{{ if .Section }}{{ $.Scratch.Add "sectionRSS" "/" }}{{ $.Scratch.Add "sectionRSS" .Section }}{{ $.Scratch.Add "sectionRSS" "/index.xml" }}{{ $.Scratch.Get "sectionRSS" | absURL }}{{ else }}{{ .Site.RSSLink }}{{ end }}" />
 		<link rel="openid.server" href="https://openid.yubico.com/server.php" />
 		<link rel="openid.delegate" href="https://openid.yubico.com/server.php/idpage?user=ccccccgcdrfi" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+		<link rel="manifest" href="/site.webmanifest?v=2">
+		<link rel="shortcut icon" href="/favicon.ico?v=2">
   </head>
 
   <body>
@@ -28,7 +35,7 @@
 
       <header id="masthead" class="site-header" role="banner">
       <div class="site-branding">
-        <h1 class="site-title"><a href="{{ .Site.BaseURL }}" rel="home"><img src="{{ "/img/avatar.jpg" | absURL }}" class="avatar"/> paddy.io</a></h1>
+        <h1 class="site-title"><a href="{{ .Site.BaseURL }}" rel="home"><img src="{{ "/img/avatar.jpg" | absURL }}" class="avatar"/> paddy carver</a></h1>
         <h2 class="site-description">impractical zealot</h2>
       </div>
 

@@ -1,6 +1,6 @@
-baseurl = "https://paddy.io"
+baseurl = "https://paddy.carvers.co"
 pygmentsuseclasses = true
-publishDir = "/home/paddy/projects/infra/files/html/paddy.io"
+publishDir = "/home/paddy/projects/infra/files/html/paddy.carvers.co"
 
 [params]
 description = "The personal site of Paddy, an impractical zealot known to tilt at windmills."

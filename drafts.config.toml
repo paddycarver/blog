@@ -1,7 +1,8 @@
-baseurl = "https://drafts.paddy.io"
+baseurl = "https://drafts.paddy.carvers.co"
 pygmentsuseclasses = true
-publishDir = "/home/paddy/projects/infra/files/html/drafts.paddy.io"
+publishDir = "/home/paddy/projects/infra/files/html/drafts.paddy.carvers.co"
 buildDrafts = true
+buildFuture = true
 
 [params]
 description = "The personal site of Paddy, an impractical zealot known to tilt at windmills."
