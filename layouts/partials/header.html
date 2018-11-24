@@ -32,6 +32,9 @@
 			a {
 				color: {{ .Params.accentcolor | safeCSS }};
 			}
+			.main-navigation a:hover {
+				border-bottom: 2px solid {{ .Params.accentcolor | safeCSS }};
+			}
 			blockquote {
 				border-left-color: {{ .Params.accentcolor | safeCSS }};
 			}
@@ -61,7 +64,7 @@
       <header id="masthead" class="site-header" role="banner">
       <div class="site-branding">
         <h1 class="site-title"><a href="{{ .Site.BaseURL }}" rel="home"><img src="{{ "/img/avatar.jpg" | absURL }}" class="avatar"/> paddy carver</a></h1>
-        <h2 class="site-description">impractical zealot</h2>
+        <h2 class="site-description">be gay do crime</h2>
       </div>
 
       <ul class="main-navigation">
