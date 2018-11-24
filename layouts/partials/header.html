@@ -3,21 +3,21 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ if .Title }}{{ .Title }}{{ else }}Tilting at Windmills{{ end }}</title>
-    <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}Open Web Cheerleader{{ end }}" />
-    <meta itemprop="name" content="{{ if .Title }}{{ .Title }}{{ else }}Open Web Cheerleader{{ end }}" />
+    <title>{{ if .Title }}{{ .Title }}{{ else }}Be Gay Do Crime{{ end }}</title>
+    <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}Be Gay Do Crime{{ end }}" />
+    <meta itemprop="name" content="{{ if .Title }}{{ .Title }}{{ else }}Be Gay Do Crime{{ end }}" />
     <meta property="og:type" content="blog" />
     <meta property="og:url" content="{{ .URL | absURL }}" />
     <meta property="og:image" content="{{ "/img/paddy.jpg" | absURL }}" />
     <meta itemprop="image" content="{{ "/img/paddy.jpg" | absURL }}">
-    <meta property="og:site_name" content="Paddy Carver" />
-    <meta property="og:description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ end }}" />
-    <meta itemprop="description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ end }}">
+    <meta property="og:site_name" content="Paddy Carver" />{{ if .Params.summary }}
+    <meta property="og:description" content="{{ .Params.summary }}" />
+    <meta itemprop="description" content="{{ .Params.summary }}">{{ end }}
     <meta property="fb:admins" content="1274456118" />
 		<meta name="msapplication-TileColor" content="#57b680">
 		<meta name="theme-color" content="#57b680">
 
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,700">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Assistant">
     <link rel="stylesheet" type="text/css" href="{{ "/css/syntax.css" | absURL }}" />
     <link rel="stylesheet" href="{{ "/css/style.css" | absURL }}" />
     <link rel="alternate" type="application/rss+xml" title="Paddy Carver{{ if .Section }}: {{ .Section }}{{ end }}" href="{{ if .Section }}{{ $.Scratch.Add "sectionRSS" "/" }}{{ $.Scratch.Add "sectionRSS" .Section }}{{ $.Scratch.Add "sectionRSS" "/index.xml" }}{{ $.Scratch.Get "sectionRSS" | absURL }}{{ else }}{{ .Site.RSSLink }}{{ end }}" />
@@ -27,11 +27,28 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
 		<link rel="manifest" href="/site.webmanifest?v=2">
-		<link rel="shortcut icon" href="/favicon.ico?v=2">
+		<link rel="shortcut icon" href="/favicon.ico?v=2">{{ if .Params.img.initial }}
+		<style type="text/css">
+			#page {
+				background-image: url({{ .Params.img.initial | safeURL }});
+			}
+		</style>{{ end }}{{ if .Params.img.final }}
+		<noscript>
+			<style type="text/css">
+				#page {
+					background-image: url({{ .Params.img.final | safeURL }});
+				}
+			</style>
+		</noscript>{{ end }}{{ if .Params.linkcolor }}
+		<style type="text/css">
+		a {
+			color: {{ .Params.linkcolor }};
+		}
+		</style>{{ end }}
   </head>
 
   <body>
-    <div id="page" class="hfeed site">
+    <div id="page" will-change="transform" class="hfeed site">
 
       <header id="masthead" class="site-header" role="banner">
       <div class="site-branding">
@@ -41,9 +58,9 @@
 
       <ul class="main-navigation">
         <li class="extendednav"><a href="{{ .Site.BaseURL }}">Home</a></li>
-	<li><a href="{{ "/posts/" | absURL }}">Posts</a></li>
-	<li><a href="{{ "/talks/" | absURL }}">Talks</a></li>
-	<li class="extendednav"><a href="{{ .RSSLink }}" title="Subscribe" class="subscribe-link">Subscribe</a></li>
+				<li><a href="{{ "/posts/" | absURL }}">Posts</a></li>
+				<li><a href="{{ "/talks/" | absURL }}">Talks</a></li>
+				<li class="extendednav"><a href="{{ .RSSLink }}" title="Subscribe" class="subscribe-link">Subscribe</a></li>
       </ul>
       </header><!-- #masthead -->
 
