@@ -7,7 +7,7 @@ title = "Be Gay Do Crime"
   attrlink = "https://www.aliwalkerphoto.com"
 +++
 
-My name’s Paddy. I live in Richland, Washington with my [husband](https://twitter.com/carver_ethan "Ethan’s Twitter") and [our puppy](https://twitter.com/RoxyThePuppy "Roxy’s Twitter"). I write software, give [talks](/talks "Past talks"), and inflict my [opinions](/posts "My blog posts") on anyone who will listen.
+My name’s Paddy. I live in Tri-Cities, Washington with my [husband](https://twitter.com/carver_ethan "Ethan’s Twitter") and [our puppy](https://twitter.com/RoxyThePuppy "Roxy’s Twitter"). I write software, give [talks](/talks "Past talks"), and inflict my [opinions](/posts "My blog posts") on anyone who will listen.
 
 I believe software engineers have a responsibility to their users, and that we have a responsibility to not make things that will do harm.
 
