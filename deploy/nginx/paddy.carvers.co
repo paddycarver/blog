@@ -1,0 +1,77 @@
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /var/www/paddy.carvers.co;
+
+	include /etc/nginx/expires.conf;
+
+	server_name paddy.carvers.co;
+	index index.html;
+
+	location = /posts/feed.xml {
+		return 301 https://paddy.carvers.co/posts/index.xml;
+	}
+
+	location = /feeds/posts/default {
+		return 301 https://paddy.carvers.co/posts/index.xml;
+	}
+
+	if ($http_x_forwarded_proto = "http") {
+		return 301 https://paddy.carvers.co$request_uri;
+	}
+}
+
+server {
+	listen 80;
+	listen [::]:80;
+
+	root /var/www/drafts.paddy.carvers.co;
+
+	include /etc/nginx/expires.conf;
+
+	server_name drafts.paddy.carvers.co;
+	index index.html;
+
+	if ($http_x_forwarded_proto = "http") {
+		return 301 https://drafts.paddy.carvers.co$request_uri;
+	}
+}
+
+server {
+	listen 80;
+	listen [::]:80;
+
+	server_name www.paddy.carvers.co;
+
+	location / {
+		expires max;
+		add_header Cache-Control "public";
+		return 301 https://paddy.carvers.co$request_uri;
+	}
+
+	location /health {
+		expires -1;
+		add_header Content-Type text/plain;
+		return 200 'OK';
+	}
+}
+
+server {
+	listen 80;
+	listen [::]:80;
+
+	server_name www.drafts.paddy.carvers.co;
+
+	location / {
+		expires max;
+		add_header Cache-Control "public";
+		return 301 https://drafts.paddy.carvers.co$request_uri;
+	}
+
+	location /health {
+		expires -1;
+		add_header Content-Type text/plain;
+		return 200 'OK';
+	}
+}
