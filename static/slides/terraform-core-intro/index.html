@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Terraform Core Intro</title>
+
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>An Intro to Terraform Core</h1>
+				</section>
+				<section>
+					<h2>Core</h2>
+					<h2>⬆ RPC ⬇</h2>
+					<h2 class="fragment fade-out">Providers</h2>
+				</section>
+				<section>
+					<h3>Let's start with the config.</h3>
+				</section>
+				<section>
+					<h3>Progressive parsing.</h3>
+				</section>
+				<section data-transition="fade">
+					<pre><code>provider "foo" {
+  api_key  = "bar"
+  base_url = "baz"
+}
+
+resource "foo_instance" "my_instance" {
+  name = "my-instance"
+  size = "chonk"
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}</code></pre>
+				</section>
+				<section data-transition="fade">
+					<pre><code>provider "foo" {
+  ?????
+}
+
+resource "foo_instance" "my_instance" {
+  ?????
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+					</code></pre>
+				</section>
+				<section>
+					<ul>
+						<li><code>github.com/zclconf/go-cty</code></li>
+						<li><code>github.com/hashicorp/hcl@v2.0.0</code></li>
+						<li><code>github.com/hashicorp/terraform/configs</code></li>
+					</ul>
+				</section>
+				<section>
+					<h4><code>configs.File</code>:</h4>
+					<pre><code>type File struct {
+	CoreVersionConstraints []VersionConstraint
+	Backends             []*Backend
+	ProviderConfigs      []*Provider
+	ProviderRequirements []*ProviderRequirement
+	Variables []*Variable
+	Locals    []*Local
+	Outputs   []*Output
+	ModuleCalls []*ModuleCall
+	ManagedResources []*Resource
+	DataResources    []*Resource
+}
+					</code></pre>
+				</section>
+				<section><h4><code>configs.Module</code>:</h4>
+					<pre><code>type Module struct {
+	SourceDir string
+	CoreVersionConstraints []VersionConstraint
+	Backend              *Backend
+	ProviderConfigs      map[string]*Provider
+	ProviderRequirements map[string][]VersionConstraint
+	Variables map[string]*Variable
+	Locals    map[string]*Local
+	Outputs   map[string]*Output
+	ModuleCalls map[string]*ModuleCall
+	ManagedResources map[string]*Resource
+	DataResources    map[string]*Resource
+}
+					</code></pre>
+				</section>
+				<section>
+					<h4><code>configs.Config</code>:</h4>
+					<pre><code>type Config struct {
+	Root *Config
+	Parent *Config
+	Path addrs.Module
+	Children map[string]*Config
+	Module *Module
+	CallRange hcl.Range
+	SourceAddr string
+	SourceAddrRange hcl.Range
+	Version *version.Version
+}
+					</code></pre>
+				</section>
+				<section>
+					<h4><code>configs.Resource</code>:</h4>
+					<pre><code>type Resource struct {
+	Mode    addrs.ResourceMode
+	Name    string
+	Type    string
+	Config  hcl.Body
+	Count   hcl.Expression
+	ForEach hcl.Expression
+	ProviderConfigRef *ProviderConfigRef
+	DependsOn []hcl.Traversal
+	Managed *ManagedResource
+	DeclRange hcl.Range
+	TypeRange hcl.Range
+}
+						</code></pre>
+				</section>
+				<section>
+					<h4><code>configs.ManagedResource</code>:</h4>
+					<pre><code>
+type ManagedResource struct {
+	Connection   *Connection
+	Provisioners []*Provisioner
+	CreateBeforeDestroy bool
+	PreventDestroy      bool
+	IgnoreChanges       []hcl.Traversal
+	IgnoreAllChanges    bool
+	CreateBeforeDestroySet bool
+	PreventDestroySet      bool
+}
+						</pre></code>
+				</section>
+				<section>
+					<h3><code>github.com/hashicorp/terraform/addrs</code></h3>
+					<p>A package to represent IDs for objects in config or state.</p>
+				</section>
+				<section>
+					<p>Cool, we understand enough about config parsing for a hot second. Let's talk about the graph.</p>
+				</section>
+				<section>
+					<p>Terraform is powered by a graph, sure, but <em>everything</em> is modeled as either a graph walk or a graph transform.</p>
+				</section>
+				<section>
+					<p>First, when calling <code>terraform.NewContext</code>, we call the <code>GetSchema</code> RPC.</p>
+				</section>
+				<section>
+					<p>Then the graph transforms run. This basically uses that stuff we just parsed about the configs to create a graph of our resources and attach the appropriate config blocks to them.</p>
+				</section>
+				<section>
+					<h4><code>terraform.NodeAbstractResource</code></h4>
+					<pre><code>type NodeAbstractResource struct {
+	Addr addrs.AbsResource
+	Schema        *configschema.Block
+	SchemaVersion uint64
+	Config        *configs.Resource
+	ProvisionerSchemas map[string]*configschema.Block
+	Targets []addrs.Targetable
+	ResolvedProvider addrs.AbsProviderConfig
+}</code></pre>
+				</section>
+				<section>
+					<h4><code>terraform.NodeAbstractResourceInstance</code></h4>
+					<pre><code>type NodeAbstractResourceInstance struct {
+	NodeAbstractResource
+	InstanceKey addrs.InstanceKey
+	ResourceState *states.Resource
+}</code></pre>
+				</section>
+				<section>
+					<p>Then we start running our graph walks, which actually Do The Things.</p>
+				</section>
+				<section>
+					<p>Let's take a quick detour here to talk about the RPC protocol.</p>
+				</section>
+				<section>
+					<p>It's not the <code>Create</code>, <code>Read</code>, <code>Update</code>, <code>Delete</code> you know. Ding, dong, the <code>ResourceData</code> is dead.</p>
+				</section>
+				<section>
+					<pre><code>    //////// Information about what a provider supports/expects
+    rpc GetSchema(GetProviderSchema.Request) returns (GetProviderSchema.Response);
+    rpc PrepareProviderConfig(PrepareProviderConfig.Request) returns (PrepareProviderConfig.Response);
+    rpc ValidateResourceTypeConfig(ValidateResourceTypeConfig.Request) returns (ValidateResourceTypeConfig.Response);
+    rpc ValidateDataSourceConfig(ValidateDataSourceConfig.Request) returns (ValidateDataSourceConfig.Response);
+    rpc UpgradeResourceState(UpgradeResourceState.Request) returns (UpgradeResourceState.Response);
+
+    //////// One-time initialization, called before other functions below
+    rpc Configure(Configure.Request) returns (Configure.Response);
+
+    //////// Managed Resource Lifecycle
+    rpc ReadResource(ReadResource.Request) returns (ReadResource.Response);
+    rpc PlanResourceChange(PlanResourceChange.Request) returns (PlanResourceChange.Response);
+    rpc ApplyResourceChange(ApplyResourceChange.Request) returns (ApplyResourceChange.Response);
+    rpc ImportResourceState(ImportResourceState.Request) returns (ImportResourceState.Response);
+
+    rpc ReadDataSource(ReadDataSource.Request) returns (ReadDataSource.Response);
+
+    //////// Graceful Shutdown
+    rpc Stop(Stop.Request) returns (Stop.Response);</code></pre>
+				</section>
+				<section>
+					<h4><code>ApplyResourceChange</code>:</h4>
+					<pre><code>message ApplyResourceChange {
+    message Request {
+        string type_name = 1;
+        DynamicValue prior_state = 2;
+        DynamicValue planned_state = 3;
+        DynamicValue config = 4;
+        bytes planned_private = 5; 
+    }
+    message Response {
+        DynamicValue new_state = 1;
+        bytes private = 2; 
+        repeated Diagnostic diagnostics = 3;
+        bool legacy_type_system = 4;
+    }
+}</code></pre>
+				</section>
+				<section>
+					<p>So anyways, back to graph walks. This is where a lot of the config actually gets parsed and where the RPC calls happen.</p>
+				</section>
+				<section>
+					<p>Each RPC call basically has its own Eval, and sometimes has several.</p>
+				</section>
+				<section>
+					<p><code>Eval</code>s are run in a specific, fragile order for each node.</p>
+				</section>
+				<section>
+					<p><a href="https://github.com/hashicorp/terraform/blob/f96edbb1138779fdf5303a153c613c0ed4a9f314/terraform/node_resource_apply_instance.go#L202">Eval list for ApplyResourceChange.</a></p>
+					<p><a href="https://github.com/hashicorp/terraform/blob/f96edbb1138779fdf5303a153c613c0ed4a9f314/terraform/eval_apply.go#L39">Code for the EvalApply.Eval method.</a></p>
+				</section>
+				<section>
+					<p>Recap: parse enough of the config to build the graph, build the graph, start all the providers, run <code>GetSchema</code> for all the providers, walk the tree and parse the remainder of the config and then use it in RPC calls.</p>
+				</section>
+				<section>
+					<h2>Questions?</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: '../plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
