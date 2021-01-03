@@ -478,3 +478,7 @@ footer#colophon {
 #content {
 	margin-top: 50px;
 }
+
+video {
+	max-width: 100%;
+}
