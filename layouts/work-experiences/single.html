@@ -1,0 +1,27 @@
+{{ partial "header.html" . }}
+
+<article>
+{{ if .Params.img }}{{ $.Scratch.Add "bannerImg" "/img/posts/" }}{{ $.Scratch.Add "bannerImg" .Params.img.file }}<img src="{{ $.Scratch.Get "bannerImg" }}" class="cover-image" />
+{{ if.Params.img.title }}<p class="cover-image-attribution">{{ if .Params.img.title }}{{ if .Params.img.link }}<a href="{{ .Params.img.link }}" title="{{ .Params.img.title }}">{{ end }}<em>{{ .Params.img.title }}</em>{{ if .Params.img.link }}</a>{{ end }}{{ else }}Cover image{{ end }} by {{ .Params.img.attr }}</p>{{ end }}
+{{ end }}
+<header class="entry-header">
+<h1 class="entry-title">{{ .Title }}</h1>
+
+{{ if or .Date .FuzzyWordCount .ReadingTime }}<div class="entry-meta">
+  {{ if .Date }}{{ .Date.Format "January 2, 2006" }}{{ end }}{{ if and .Date .FuzzyWordCount }} · {{ end }}{{ if .FuzzyWordCount }}~{{ .FuzzyWordCount }} words{{ end }}{{ if and .FuzzyWordCount .ReadingTime }} ({{ end }}{{ if .ReadingTime }}{{ .ReadingTime }} min{{ end }}{{ if and .FuzzyWordCount .ReadingTime }}){{ end }}
+</div><!-- .entry-meta -->{{ end }}
+</header><!-- .entry-header -->
+
+<div class="entry-content">
+  {{ if .Params.quote }}
+  <blockquote class="opener">{{ .Params.quote.text | markdownify }}</blockquote>
+  {{ if .Params.quote.attr }}
+  <p class="opener-attribution">&mdash;{{ .Params.quote.attr | markdownify }}</p>
+  {{ end }}
+  {{ end }}
+
+  {{ .Content }}
+</div><!-- .entry-content -->
+</article><!-- #post-## -->
+
+{{ partial "footer.html" . }}

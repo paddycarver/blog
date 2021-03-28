@@ -1,0 +1,17 @@
+{{ partial "header.html" . }}
+
+<article>
+{{ range .Data.Pages }}
+<div class="entry-content">
+	<header class="entry-header index-entry-header">
+		<div class="entry-meta">
+			{{ .Params.public_date  }}
+		</div>
+		<h1 class="entry-title"><a href="{{ .URL }}" title="{{ .Title }}">{{ .Title }}</a></h1>
+	</header>
+	<p><strong>Pay:</strong> {{ .Params.pay }}</p>
+</div>
+</article>
+{{ end }}
+
+{{ partial "footer.html" . }}
